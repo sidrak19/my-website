@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Route } from 'react-router-dom';
 import styled from 'styled-components';
 import { lightestSky } from '../ColorUtils';
 import { FlexRowCenter } from '../LayoutUtils';
@@ -27,7 +27,14 @@ const StyledNavLink = styled(NavLink)({
 export const HeaderItem: React.FC<IHeaderItem> = ({ text, route }) => {
   return (
     <StyledNavLink to={route}>
-      <StyledHeaderItem>{text}</StyledHeaderItem>
+      <Route
+        path={route}
+        children={({ location }) => (
+          <StyledHeaderItem>
+            {location.pathname === route ? <b>{text}</b> : text}
+          </StyledHeaderItem>
+        )}
+      ></Route>
     </StyledNavLink>
   );
 };

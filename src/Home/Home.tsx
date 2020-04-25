@@ -26,7 +26,7 @@ export const Home: React.FC = () => {
               design enthusiast. Adept in the design, installation, testing and
               maintenance of web systems.
             </p>
-            <p>I'm a sketching and gaming fan as well.</p>
+            <p>I'm also a fan of sketching and gaming.</p>
           </article>
           <StyledImg src={profilepic} alt="profile pic" width="250px" />
         </FlexRow>
