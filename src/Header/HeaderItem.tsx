@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+import { lightestSky } from '../ColorUtils';
 import { FlexRowCenter } from '../LayoutUtils';
 
 interface IHeaderItem {
@@ -11,6 +12,10 @@ interface IHeaderItem {
 const StyledHeaderItem = styled(FlexRowCenter)({
   width: '150px',
   height: '100px',
+  '&:hover': {
+    backgroundColor: lightestSky,
+    color: 'black',
+  },
 });
 
 const StyledNavLink = styled(NavLink)({
@@ -19,15 +24,10 @@ const StyledNavLink = styled(NavLink)({
   color: 'white',
 });
 
-export const HeaderItem: React.FC<IHeaderItem> = ({
-  text,
-  route,
-}) => {
+export const HeaderItem: React.FC<IHeaderItem> = ({ text, route }) => {
   return (
     <StyledNavLink to={route}>
-      <StyledHeaderItem>
-        {text}
-      </StyledHeaderItem>
+      <StyledHeaderItem>{text}</StyledHeaderItem>
     </StyledNavLink>
   );
 };

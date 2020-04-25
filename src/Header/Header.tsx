@@ -10,11 +10,13 @@ const StyledHeaderRow = styled(FlexRow)({
 export const Header: React.FC = () => {
   return (
     <Section>
-      <StyledHeaderRow>
-        <HeaderItem text="About" route="/" />
-        <HeaderItem text="Resume" route="/resume" />
-        <HeaderItem text="Projects" route="/projects" />
-      </StyledHeaderRow>
+      <header>
+        <StyledHeaderRow>
+          <HeaderItem text="Home" route="/" />
+          <HeaderItem text="Resume" route="/resume" />
+          <HeaderItem text="Projects" route="/projects" />
+        </StyledHeaderRow>
+      </header>
     </Section>
   );
 };
