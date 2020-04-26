@@ -5,11 +5,11 @@ export const Section = styled.section({
   maxWidth: '1000px',
   width: '1000px',
   borderRadius: '8px',
+  marginBottom: '32px',
 });
 
 export const LightSection = styled(Section)({
   backgroundColor: lightestSky,
-  boxShadow: '3px 3px 3px 3px #ccc;',
 });
 
 export const SectionContent = styled.div({

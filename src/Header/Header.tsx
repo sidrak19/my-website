@@ -13,8 +13,8 @@ export const Header: React.FC = () => {
       <header>
         <StyledHeaderRow>
           <HeaderItem text="Home" route="/" />
-          <HeaderItem text="Resume" route="/resume" />
-          <HeaderItem text="Projects" route="/projects" />
+          {/* <HeaderItem text="Resume" route="/resume" /> */}
+          {/* <HeaderItem text="Projects" route="/projects" /> */}
         </StyledHeaderRow>
       </header>
     </Section>
