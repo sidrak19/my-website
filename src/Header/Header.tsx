@@ -1,22 +1,38 @@
 import * as React from 'react';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 import styled from 'styled-components';
-import { FlexRow, Section } from '../LayoutUtils';
-import { HeaderItem } from './HeaderItem';
+import { lightestSky } from '../ColorUtils';
 
-const StyledHeaderRow = styled(FlexRow)({
+const StyledNavbar = styled(Navbar)({
+  width: '100%',
+  marginBottom: '32px',
+  backgroundColor: lightestSky,
+});
+
+const StyledNavbarCollapse = styled(Navbar.Collapse)({
   justifyContent: 'flex-end',
+});
+
+const StyledNavbarToggle = styled(Navbar.Toggle)({
+  marginLeft: '16px',
+});
+
+const StyledNavLink = styled(Nav.Link)({
+  margin: '0 32px 0 16px',
 });
 
 export const Header: React.FC = () => {
   return (
-    <Section>
-      <header>
-        <StyledHeaderRow>
-          <HeaderItem text="Home" route="/" />
-          {/* <HeaderItem text="Resume" route="/resume" /> */}
-          {/* <HeaderItem text="Projects" route="/projects" /> */}
-        </StyledHeaderRow>
-      </header>
-    </Section>
+    <StyledNavbar expand="lg">
+      <StyledNavbarToggle aria-controls="basic-navbar-nav" />
+      <StyledNavbarCollapse id="basic-navbar-nav">
+        <Nav>
+          <StyledNavLink href="/">Home</StyledNavLink>
+          <StyledNavLink href="resume">Resume</StyledNavLink>
+          <StyledNavLink href="projects">Projects</StyledNavLink>
+        </Nav>
+      </StyledNavbarCollapse>
+    </StyledNavbar>
   );
 };

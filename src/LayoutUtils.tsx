@@ -11,11 +11,11 @@ export const Section = styled.section({
 });
 
 export const Page = styled(Section)({
-  padding: '0 32px',
+  flex: '1 1 auto',
+  marginBottom: '0',
 });
 
 export const PageSection = styled.div({
-  flex: '1 1 auto',
   borderRadius: '8px',
   margin: '0 32px 32px 32px',
   backgroundColor: lightestSky,

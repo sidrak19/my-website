@@ -10,11 +10,12 @@ interface IHeaderItem {
 }
 
 const StyledHeaderItem = styled(FlexRowCenter)({
-  width: '150px',
-  height: '100px',
+  width: '100px',
+  height: '80px',
   '&:hover': {
     backgroundColor: lightestSky,
     color: 'black',
+    fontWeight: 'bold',
   },
 });
 
