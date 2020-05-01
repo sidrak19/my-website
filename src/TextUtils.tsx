@@ -3,4 +3,5 @@ import { largeFontSize } from "./FontUtils";
 
 export const StyledHeader = styled.h1({
   fontSize: largeFontSize,
+  textAlign: 'center',
 });

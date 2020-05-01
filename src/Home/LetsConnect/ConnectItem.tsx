@@ -10,7 +10,7 @@ interface IConnectItem {
 
 const StyledConnectItem = styled.a(
   {
-    margin: '0 32px',
+    margin: '16px 32px',
     color: 'black',
     ':hover': {
       transform: 'translateY(-2px)',

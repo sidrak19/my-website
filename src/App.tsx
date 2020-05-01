@@ -6,7 +6,7 @@ import { normalFontSize } from './FontUtils';
 import { Footer } from './Footer/Footer';
 import { Header } from './Header/Header';
 import { Home } from './Home/Home';
-import { FlexColumnCenter, FlexExpand } from './LayoutUtils';
+import { FlexColumnCenter, Page } from './LayoutUtils';
 import { Projects } from './Projects';
 import { Resume } from './Resume';
 
@@ -16,6 +16,7 @@ const StyledRoot = styled(FlexColumnCenter)({
   fontSize: normalFontSize,
   fontFamily: `'Roboto Condensed', sans-serif;`,
   lineHeight: '1.5',
+  overflow: 'hidden',
 });
 
 const App = () => {
@@ -23,13 +24,13 @@ const App = () => {
     <StyledRoot>
       <BrowserRouter>
         <Header />
-        <FlexExpand>
+        <Page>
           <Switch>
             <Route path="/" component={Home} exact />
             <Route path="/resume" component={Resume} exact />
             <Route path="/projects" component={Projects} exact />
           </Switch>
-        </FlexExpand>
+        </Page>
         <Footer />
       </BrowserRouter>
     </StyledRoot>

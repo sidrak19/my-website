@@ -3,9 +3,22 @@ import { lightestSky } from './ColorUtils';
 
 export const Section = styled.section({
   maxWidth: '1000px',
-  width: '1000px',
+  width: '100%',
   borderRadius: '8px',
   marginBottom: '32px',
+  display: 'flex',
+  flexDirection: 'column',
+});
+
+export const Page = styled(Section)({
+  padding: '0 32px',
+});
+
+export const PageSection = styled.div({
+  flex: '1 1 auto',
+  borderRadius: '8px',
+  margin: '0 32px 32px 32px',
+  backgroundColor: lightestSky,
 });
 
 export const LightSection = styled(Section)({
@@ -13,15 +26,16 @@ export const LightSection = styled(Section)({
 });
 
 export const SectionContent = styled.div({
-  padding: '48px 64px',
+  padding: '32px 48px',
 });
 
 export const FlexRow = styled.div({
   display: 'flex',
+  flexDirection: 'row',
+  flexWrap: 'wrap',
 });
 
-export const FlexRowCenter = styled.div({
-  display: 'flex',
+export const FlexRowCenter = styled(FlexRow)({
   alignItems: 'center',
   justifyContent: 'center',
 });
