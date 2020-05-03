@@ -11,13 +11,15 @@ interface IConnectItem {
 const StyledConnectItem = styled.a(
   {
     margin: '16px 32px',
-    color: 'black',
     ':hover': {
       transform: 'translateY(-2px)',
     },
   },
   (props) => ({
     color: props.color,
+    ':hover': {
+      color: props.color,
+    },
   })
 );
 

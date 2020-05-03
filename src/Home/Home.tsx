@@ -1,14 +1,16 @@
 import * as React from 'react';
 import { addDisplayName } from '../ReactUtils';
+import { ImageGallery } from './ImageGallery/ImageGallery';
 import { Intro } from './Intro/Intro';
 import { LetsConnect } from './LetsConnect/LetsConnect';
-import { GeraltWitcher3Quote } from './Quotes/Geralt';
+import { FavoriteQuotes } from './Quotes/FavoriteQuotes';
 
 export const Home: React.FC = () => {
   return (
     <>
       <Intro />
-      <GeraltWitcher3Quote />
+      <FavoriteQuotes />
+      <ImageGallery />
       <LetsConnect />
     </>
   );

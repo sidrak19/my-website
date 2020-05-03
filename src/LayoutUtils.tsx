@@ -49,3 +49,9 @@ export const FlexColumnCenter = styled.div({
 export const FlexExpand = styled.div({
   flex: '1 1 auto',
 });
+
+export const SpacedItemDiv = styled.div({
+  ':not(:last-child)': {
+    marginBottom: '32px',
+  },
+});

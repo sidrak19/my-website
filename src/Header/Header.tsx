@@ -29,8 +29,8 @@ export const Header: React.FC = () => {
       <StyledNavbarCollapse id="basic-navbar-nav">
         <Nav>
           <StyledNavLink href="/">Home</StyledNavLink>
-          <StyledNavLink href="resume">Resume</StyledNavLink>
-          <StyledNavLink href="projects">Projects</StyledNavLink>
+          {/* <StyledNavLink href="resume">Resume</StyledNavLink> */}
+          {/* <StyledNavLink href="projects">Projects</StyledNavLink> */}
         </Nav>
       </StyledNavbarCollapse>
     </StyledNavbar>
