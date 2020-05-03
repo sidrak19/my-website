@@ -25,8 +25,11 @@ export const Intro: React.FC = () => {
           <StyledArticle>
             <StyledHeader>Hey there!</StyledHeader>
             <p>
-              I'm Siddharth, an experienced web developer and user interface design
-              enthusiast. I graduated from IIT Kharagpur with my Bachelor-cum-Masters degree in 2016.
+              I'm Siddharth, an experienced web developer and user interface
+              design enthusiast, currently working at{' '}
+              <a href="https://www.rubrik.com/en">Rubrik, Inc</a>. I graduated from
+              the Indian Institute of Technology, Kharagpur (IIT Kharagpur), with my Bachelor-cum-Masters
+              degree in Computer Science and Engineering in 2016.
             </p>
             <p>I'm also a fan of sketching and gaming.</p>
           </StyledArticle>
