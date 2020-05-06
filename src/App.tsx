@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import * as React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import styled from 'styled-components';
+import { Biodata } from './Biodata/Biodata';
 import { lightGreen } from './ColorUtils';
 import { normalFontSize } from './FontUtils';
 import { Footer } from './Footer/Footer';
@@ -30,6 +31,7 @@ const App = () => {
             <Route path="/" component={Home} exact />
             <Route path="/resume" component={Resume} exact />
             <Route path="/projects" component={Projects} exact />
+            <Route path="/biodata" component={Biodata} exact />
           </Switch>
         </Page>
         <Footer />
