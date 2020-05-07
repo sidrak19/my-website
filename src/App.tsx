@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 import styled from 'styled-components';
 import { Biodata } from './Biodata/Biodata';
 import { lightGreen } from './ColorUtils';
@@ -24,18 +24,18 @@ const StyledRoot = styled(FlexColumnCenter)({
 const App = () => {
   return (
     <StyledRoot>
-      <BrowserRouter>
+      <HashRouter>
         <Header />
         <Page>
           <Switch>
             <Route path="/" component={Home} exact />
-            <Route path="/resume" component={Resume} exact />
-            <Route path="/projects" component={Projects} exact />
-            <Route path="/biodata" component={Biodata} exact />
+            <Route path="/resume" component={Resume} />
+            <Route path="/projects" component={Projects} />
+            <Route path="/biodata" component={Biodata} />
           </Switch>
         </Page>
         <Footer />
-      </BrowserRouter>
+      </HashRouter>
     </StyledRoot>
   );
 };

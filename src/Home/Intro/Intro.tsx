@@ -34,7 +34,7 @@ export const Intro: React.FC = () => {
               (IIT Kharagpur), with an Integrated Bachelors and Masters degree
               in Computer Science and Engineering in 2016.
             </p>
-            <p>I'm also a fan of sketching and gaming.</p>
+            <p>I'm a fan of sketching and gaming.</p>
           </StyledArticle>
         </FlexRowCenter>
       </SectionContent>
