@@ -35,8 +35,11 @@ export const FlexRow = styled.div({
   flexWrap: 'wrap',
 });
 
-export const FlexRowCenter = styled(FlexRow)({
+export const FlexRowAlignCenter = styled(FlexRow)({
   alignItems: 'center',
+});
+
+export const FlexRowCenter = styled(FlexRowAlignCenter)({
   justifyContent: 'center',
 });
 

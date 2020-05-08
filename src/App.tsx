@@ -10,7 +10,7 @@ import { Header } from './Header/Header';
 import { Home } from './Home/Home';
 import { FlexColumnCenter, Page } from './LayoutUtils';
 import { Projects } from './Projects';
-import { Resume } from './Resume';
+import { Resume } from './Resume/Resume';
 
 const StyledRoot = styled(FlexColumnCenter)({
   backgroundColor: lightGreen,

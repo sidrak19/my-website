@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { StyledImg } from '../../ComponentUtils';
 import { FlexRowCenter, PageSection, SectionContent } from '../../LayoutUtils';
 import profilepic from '../../static/profilepic.jpg';
-import { StyledHeader } from '../../TextUtils';
+import { StyledHeaderCenter } from '../../TextUtils';
 
 const StyledArticle = styled.article({
   textAlign: 'center',
@@ -18,7 +18,7 @@ export const Intro: React.FC = () => {
         <FlexRowCenter>
           <StyledImg src={profilepic} alt="profile pic" width="240px" />
           <StyledArticle>
-            <StyledHeader>Hey there!</StyledHeader>
+            <StyledHeaderCenter>Hey there!</StyledHeaderCenter>
             <p>
               I'm Siddharth, an experienced web developer and user interface
               design enthusiast, currently working at{' '}

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { PageSection, SectionContent, SpacedItemDiv } from '../../LayoutUtils';
-import { StyledHeader } from '../../TextUtils';
+import { StyledHeaderCenter } from '../../TextUtils';
 
 export const FavoriteQuotes: React.FC = () => {
   const quotes = [
@@ -18,7 +18,7 @@ export const FavoriteQuotes: React.FC = () => {
   return (
     <PageSection>
       <SectionContent>
-        <StyledHeader>Favorite Quotes</StyledHeader>
+        <StyledHeaderCenter>Favorite Quotes</StyledHeaderCenter>
       {quotes.map((quote, index) => {
         return (
           <SpacedItemDiv key={index}>

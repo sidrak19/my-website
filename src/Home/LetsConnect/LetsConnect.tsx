@@ -2,7 +2,7 @@ import { faGithub, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import * as React from 'react';
 import { FlexColumnCenter, FlexRowCenter, PageSection, SectionContent } from '../../LayoutUtils';
-import { StyledHeader } from '../../TextUtils';
+import { StyledHeaderCenter } from '../../TextUtils';
 import { ConnectItem } from './ConnectItem';
 
 export const LetsConnect: React.FC = () => {
@@ -10,7 +10,7 @@ export const LetsConnect: React.FC = () => {
     <PageSection>
       <SectionContent>
         <FlexColumnCenter>
-          <StyledHeader>Lets's Connect</StyledHeader>
+          <StyledHeaderCenter>Lets's Connect</StyledHeaderCenter>
           <FlexRowCenter>
             <ConnectItem
               icon={faEnvelope}

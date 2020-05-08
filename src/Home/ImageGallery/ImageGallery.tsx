@@ -11,7 +11,7 @@ import MotherTeresa from '../../static/Mother-Teresa.jpg';
 import ShaoJun from '../../static/Shao-Jun.jpg';
 import SouthIndian from '../../static/South-Indian.jpg';
 import Witcher from '../../static/Witcher.jpg';
-import { StyledHeader } from '../../TextUtils';
+import { StyledHeaderCenter } from '../../TextUtils';
 
 const StyledGapperyImg = styled.img({
   width: '200px',
@@ -79,7 +79,7 @@ export class ImageGallery extends React.Component<IProps, IState> {
     return (
       <PageSection>
         <SectionContent>
-          <StyledHeader>Sketches</StyledHeader>
+          <StyledHeaderCenter>Sketches</StyledHeaderCenter>
           <FlexRowCenter>
             {this.sketches.map((sketch, index) => {
               if (!loadMore && index > 2) {
