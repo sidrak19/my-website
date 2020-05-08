@@ -1,14 +1,9 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import { StyledImg } from '../../ComponentUtils';
 import { FlexRowCenter, PageSection, SectionContent } from '../../LayoutUtils';
 import profilepic from '../../static/profilepic.jpg';
 import { StyledHeader } from '../../TextUtils';
-
-const StyledImg = styled.img({
-  borderRadius: '50%',
-  margin: '16px',
-  minWidth: '240px',
-});
 
 const StyledArticle = styled.article({
   textAlign: 'center',

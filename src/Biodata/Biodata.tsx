@@ -1,7 +1,8 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { PageSection } from '../LayoutUtils';
-import { StyledHeader } from '../TextUtils';
+import { StyledImg } from '../ComponentUtils';
+import { FlexColumnCenter, PageSection } from '../LayoutUtils';
+import profilepic from '../static/profilepic.jpg';
 import { BiodataEntry, IBiodataEntry } from './BiodataEntry';
 
 const BiodataContainer = styled.div({
@@ -36,6 +37,9 @@ const biodataEntries: Array<IBiodataEntry> = [{
   label: 'Current city',
   value: 'Bengaluru (Bangalore)',
 }, {
+  label: 'Salary',
+  value: '35 LPA',
+},{
   label: 'Height',
   value: '5\' 9"', 
 }, {
@@ -85,17 +89,19 @@ const biodataEntries: Array<IBiodataEntry> = [{
   value: 'Shri N.C. Pathak (BA, LLB)',
 }, {
   label: 'Maternal Grandfather\'s occupation',
-  value: 'Ret. Under Secretary (UP Govt.)',
+  value: 'Ret. Joint Secretary (UP Govt.)',
 }];
 
 export const Biodata: React.FC = () => {
   return <PageSection>
-    <StyledHeader>Biodata</StyledHeader>
-    <BiodataContainer>
-      {biodataEntries.map(({
-        label,
-        value,
-      }) => <BiodataEntry label={label} value={value} />)}
-    </BiodataContainer>
+    <FlexColumnCenter>
+      <StyledImg src={profilepic} alt="profile pic" width="240px" />
+      <BiodataContainer>
+        {biodataEntries.map(({
+          label,
+          value,
+        }) => <BiodataEntry label={label} value={value} />)}
+      </BiodataContainer>
+    </FlexColumnCenter>
   </PageSection>;
 };
