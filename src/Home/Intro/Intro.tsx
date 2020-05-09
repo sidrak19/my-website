@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { StyledImg } from '../../ComponentUtils';
 import { FlexRowCenter, PageSection, SectionContent } from '../../LayoutUtils';
 import profilepic from '../../static/profilepic.jpg';
-import { StyledHeaderCenter } from '../../TextUtils';
+import { ExternalLink, StyledHeaderCenter } from '../../TextUtils';
 
 const StyledArticle = styled.article({
   textAlign: 'center',
@@ -22,7 +22,7 @@ export const Intro: React.FC = () => {
             <p>
               I'm Siddharth, an experienced web developer and user interface
               design enthusiast, currently working at{' '}
-              <a href="https://www.rubrik.com/en">Rubrik, Inc</a>.
+              <ExternalLink text="Rubrik, Inc" link="https://www.rubrik.com/en" />.
             </p>
             <p>
               I graduated from the Indian Institute of Technology, Kharagpur

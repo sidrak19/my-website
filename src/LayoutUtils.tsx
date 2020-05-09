@@ -6,6 +6,9 @@ export const Section = styled.section({
   width: '100%',
   borderRadius: '8px',
   marginBottom: '32px',
+  '@media (max-width: 768px)': {
+    marginBottom: '16px',
+  },
   display: 'flex',
   flexDirection: 'column',
 });
@@ -18,6 +21,9 @@ export const Page = styled(Section)({
 export const PageSection = styled.div({
   borderRadius: '8px',
   margin: '0 32px 32px 32px',
+  '@media (max-width: 768px)': {
+    margin: '0 16px 16px 16px',
+  },
   backgroundColor: lightestSky,
 });
 
@@ -27,6 +33,9 @@ export const LightSection = styled(Section)({
 
 export const SectionContent = styled.div({
   padding: '32px 48px',
+  '@media (max-width: 768px)': {
+    padding: '16px 24px',
+  },
 });
 
 export const FlexRow = styled.div({
@@ -57,4 +66,9 @@ export const SpacedItemDiv = styled.div({
   ':not(:last-child)': {
     marginBottom: '32px',
   },
+});
+
+export const StyledUl = styled.ul({
+  paddingInlineStart: '21px',
+  marginBottom: '0',
 });

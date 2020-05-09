@@ -7,6 +7,9 @@ import { lightestSky } from '../ColorUtils';
 const StyledNavbar = styled(Navbar)({
   width: '100%',
   marginBottom: '32px',
+  '@media (max-width: 768px)': {
+    marginBottom: '16px',
+  },
   backgroundColor: lightestSky,
 });
 
@@ -15,11 +18,14 @@ const StyledNavbarCollapse = styled(Navbar.Collapse)({
 });
 
 const StyledNavbarToggle = styled(Navbar.Toggle)({
-  marginLeft: '16px',
+  marginLeft: '0',
 });
 
 const StyledNavLink = styled(Nav.Link)({
   margin: '0 32px 0 16px',
+  '@media (max-width: 768px)': {
+    margin: '0',
+  },
 });
 
 export const Header: React.FC = () => {

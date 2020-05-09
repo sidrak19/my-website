@@ -9,6 +9,7 @@ import HimachalBoy from '../../static/Himachal-Boy.jpg';
 import Kratos from '../../static/Kratos.jpg';
 import MotherTeresa from '../../static/Mother-Teresa.jpg';
 import ShaoJun from '../../static/Shao-Jun.jpg';
+import ShunningCamera from '../../static/Shunning-Camera.jpg';
 import SouthIndian from '../../static/South-Indian.jpg';
 import Witcher from '../../static/Witcher.jpg';
 import { StyledHeaderCenter } from '../../TextUtils';
@@ -52,6 +53,10 @@ export class ImageGallery extends React.Component<IProps, IState> {
     {
       image: SouthIndian,
       caption: 'South Indian beauty in traditional attire',
+    },
+    {
+      image: ShunningCamera,
+      caption: 'A smiling face shunning the camera',
     },
     {
       image: MotherTeresa,

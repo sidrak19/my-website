@@ -1,19 +1,16 @@
-import { faGraduationCap } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as React from 'react';
 import StarRatings from 'react-star-ratings';
-import {
-  FlexRowAlignCenter,
-  PageSection,
-  SectionContent,
-} from '../../LayoutUtils';
-import { Line, NoMarginLine, StyledHeader } from '../../TextUtils';
+import { FlexRowAlignCenter, PageSection, SectionContent } from '../../LayoutUtils';
+import { Line, NoMarginLine, StyledH3 } from '../../TextUtils';
 import './Education.css';
 import { EducationEntry, IEducationEntry } from './EducationEntry';
 
 const educations: Array<IEducationEntry> = [
   {
     institute: 'Indian Institute of Technology, Kharagpur',
+    start: '2011',
+    end: '2016',
+    location: 'Kharagpur, India',
     description:
       'Integrated Bachelors and Masters Degree Course, Computer Science & Engineering',
     subDescription: (
@@ -31,7 +28,9 @@ const educations: Array<IEducationEntry> = [
     ),
   },
   {
-    institute: "Children's Senior Academy, Roorkee, India",
+    institute: 'Children\'s Senior Academy',
+    start: 'May, 2011',
+    location: 'Roorkee, India',
     description: (
       <Line>
         86 <small>%</small> in 12<sup>th</sup> Grade Examinations, the highest
@@ -40,7 +39,9 @@ const educations: Array<IEducationEntry> = [
     ),
   },
   {
-    institute: 'Montfort Senior Secondary School, Roorkee, India',
+    institute: 'Montfort Senior Secondary School',
+    start: 'May, 2009',
+    location: 'Roorkee, India',
     description: (
       <Line>
         93 <small>%</small> in 10<sup>th</sup> Grade Examinations
@@ -53,14 +54,16 @@ export const Education: React.FC = () => {
   return (
     <PageSection>
       <SectionContent>
-        <StyledHeader>
+        <StyledH3>
           Education
-          <FontAwesomeIcon icon={faGraduationCap} className="title-icon" />
-        </StyledHeader>
-        {educations.map(({ institute, description, subDescription }, index) => (
+        </StyledH3>
+        {educations.map(({ institute, description, subDescription, start, end, location }, index) => (
           <EducationEntry
             key={index}
             institute={institute}
+            start={start}
+            end={end}
+            location={location}
             description={description}
             subDescription={subDescription}
           />
