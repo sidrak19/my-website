@@ -9,6 +9,10 @@ export const StyledH3 = styled.h3({
   margin: '16px 0 32px 0',
 });
 
+export const StyledH4 = styled.h4({
+  margin: '16px 0 16px 0',
+});
+
 export const StyledHeaderCenter = styled(StyledH2)({
   textAlign: 'center',
 });

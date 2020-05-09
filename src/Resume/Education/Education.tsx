@@ -1,7 +1,6 @@
 import * as React from 'react';
-import StarRatings from 'react-star-ratings';
-import { FlexRowAlignCenter, PageSection, SectionContent } from '../../LayoutUtils';
-import { Line, NoMarginLine, StyledH3 } from '../../TextUtils';
+import { PageSection, SectionContent } from '../../LayoutUtils';
+import { Line, StyledH3 } from '../../TextUtils';
 import './Education.css';
 import { EducationEntry, IEducationEntry } from './EducationEntry';
 
@@ -13,22 +12,10 @@ const educations: Array<IEducationEntry> = [
     location: 'Kharagpur, India',
     description:
       'Integrated Bachelors and Masters Degree Course, Computer Science & Engineering',
-    subDescription: (
-      <FlexRowAlignCenter>
-        <NoMarginLine>CGPA - 9.07 / 10&nbsp;&nbsp;&nbsp;</NoMarginLine>
-        <StarRatings
-          rating={4.535}
-          starRatedColor="gold"
-          starDimension="20px"
-          starSpacing="2px"
-          numberOfStars={5}
-          name="rating"
-        ></StarRatings>
-      </FlexRowAlignCenter>
-    ),
+    subDescription: `CGPA - 9.07 / 10`,
   },
   {
-    institute: 'Children\'s Senior Academy',
+    institute: "Children's Senior Academy",
     start: 'May, 2011',
     location: 'Roorkee, India',
     description: (
@@ -54,20 +41,23 @@ export const Education: React.FC = () => {
   return (
     <PageSection>
       <SectionContent>
-        <StyledH3>
-          Education
-        </StyledH3>
-        {educations.map(({ institute, description, subDescription, start, end, location }, index) => (
-          <EducationEntry
-            key={index}
-            institute={institute}
-            start={start}
-            end={end}
-            location={location}
-            description={description}
-            subDescription={subDescription}
-          />
-        ))}
+        <StyledH3>Education</StyledH3>
+        {educations.map(
+          (
+            { institute, description, subDescription, start, end, location },
+            index
+          ) => (
+            <EducationEntry
+              key={index}
+              institute={institute}
+              start={start}
+              end={end}
+              location={location}
+              description={description}
+              subDescription={subDescription}
+            />
+          )
+        )}
       </SectionContent>
     </PageSection>
   );
