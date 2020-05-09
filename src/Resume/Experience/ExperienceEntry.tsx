@@ -1,12 +1,7 @@
 import * as React from 'react';
-import styled from 'styled-components';
 import { SpacedItemDiv, StyledUl } from '../../LayoutUtils';
 import { BoldLine, Line } from '../../TextUtils';
 import { TimeLocation } from '../ResumeUtils';
-
-const LightStyledUl = styled(StyledUl)({
-  fontSize: '18px',
-});
 
 export interface IExperienceEntry {
   position: string;
@@ -31,13 +26,13 @@ export const ExperienceEntry: React.FC<IExperienceEntry> = ({
         {position}, {company}
       </BoldLine>
       <TimeLocation start={start} end={end} location={location} />
-      <LightStyledUl>
+      <StyledUl>
         {description.map((descLine, index) => (
           <li key={index}>
             {typeof descLine === 'string' ? <Line>{descLine}</Line> : descLine}
           </li>
         ))}
-      </LightStyledUl>
+      </StyledUl>
     </SpacedItemDiv>
   );
 };

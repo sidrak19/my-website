@@ -71,4 +71,5 @@ export const SpacedItemDiv = styled.div({
 export const StyledUl = styled.ul({
   paddingInlineStart: '21px',
   marginBottom: '0',
+  fontSize: '18px',
 });

@@ -36,7 +36,7 @@ export const Header: React.FC = () => {
         <Nav>
           <StyledNavLink href="/">Home</StyledNavLink>
           <StyledNavLink href="/#/resume">Resume</StyledNavLink>
-          <StyledNavLink href="/#/projects">Projects</StyledNavLink>
+          {/* <StyledNavLink href="/#/projects">Projects</StyledNavLink> */}
         </Nav>
       </StyledNavbarCollapse>
     </StyledNavbar>
