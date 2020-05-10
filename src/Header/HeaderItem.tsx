@@ -1,23 +1,11 @@
 import * as React from 'react';
 import { NavLink, Route } from 'react-router-dom';
 import styled from 'styled-components';
-import { lightestSky } from '../ColorUtils';
-import { FlexRowCenter } from '../LayoutUtils';
 
 interface IHeaderItem {
   text: string;
   route: string;
 }
-
-const StyledHeaderItem = styled(FlexRowCenter)({
-  width: '100px',
-  height: '80px',
-  '&:hover': {
-    backgroundColor: lightestSky,
-    color: 'black',
-    fontWeight: 'bold',
-  },
-});
 
 const StyledNavLink = styled(NavLink)({
   textDecoration: 'none',
@@ -30,11 +18,9 @@ export const HeaderItem: React.FC<IHeaderItem> = ({ text, route }) => {
     <StyledNavLink to={route}>
       <Route
         path={route}
-        children={({ location }) => (
-          <StyledHeaderItem>
-            {location.pathname === route ? <b>{text}</b> : text}
-          </StyledHeaderItem>
-        )}
+        children={({ location }) => 
+            location.pathname === route ? <b>{text}</b> : text
+        }
       ></Route>
     </StyledNavLink>
   );

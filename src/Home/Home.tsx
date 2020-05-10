@@ -9,8 +9,8 @@ export const Home: React.FC = () => {
   return (
     <>
       <Intro />
-      <FavoriteQuotes />
       <ImageGallery />
+      <FavoriteQuotes />
       <LetsConnect />
     </>
   );

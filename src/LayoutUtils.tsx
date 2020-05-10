@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { lightestSky } from './ColorUtils';
 
 export const Section = styled.section({
   maxWidth: '1000px',
@@ -24,11 +23,6 @@ export const PageSection = styled.div({
   '@media (max-width: 768px)': {
     margin: '0 16px 16px 16px',
   },
-  backgroundColor: lightestSky,
-});
-
-export const LightSection = styled(Section)({
-  backgroundColor: lightestSky,
 });
 
 export const SectionContent = styled.div({

@@ -2,7 +2,7 @@ import * as React from 'react';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import styled from 'styled-components';
-import { lightestSky } from '../ColorUtils';
+import { lightGreen } from '../ColorUtils';
 
 const StyledNavbar = styled(Navbar)({
   width: '100%',
@@ -10,7 +10,7 @@ const StyledNavbar = styled(Navbar)({
   '@media (max-width: 768px)': {
     marginBottom: '16px',
   },
-  backgroundColor: lightestSky,
+  backgroundColor: lightGreen,
 });
 
 const StyledNavbarCollapse = styled(Navbar.Collapse)({
@@ -19,9 +19,11 @@ const StyledNavbarCollapse = styled(Navbar.Collapse)({
 
 const StyledNavbarToggle = styled(Navbar.Toggle)({
   marginLeft: '0',
+  backgroundColor: 'white',
 });
 
 const StyledNavLink = styled(Nav.Link)({
+  color: 'white !important',
   margin: '0 32px 0 16px',
   '@media (max-width: 768px)': {
     margin: '0',

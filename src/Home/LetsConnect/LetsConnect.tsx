@@ -10,7 +10,7 @@ export const LetsConnect: React.FC = () => {
     <PageSection>
       <SectionContent>
         <FlexColumnCenter>
-          <StyledHeaderCenter>Lets's Connect</StyledHeaderCenter>
+          <StyledHeaderCenter>Let's Connect</StyledHeaderCenter>
           <FlexRowCenter>
             <ConnectItem
               icon={faEnvelope}

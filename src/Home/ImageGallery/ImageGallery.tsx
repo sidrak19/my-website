@@ -1,10 +1,13 @@
-import { faEllipsisH } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as React from 'react';
+import Carousel from 'react-bootstrap/Carousel';
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
 import styled from 'styled-components';
-import { FlexRowCenter, PageSection, SectionContent } from '../../LayoutUtils';
+import {
+  FlexColumnCenter,
+  PageSection,
+  SectionContent,
+} from '../../LayoutUtils';
 import HimachalBoy from '../../static/Himachal-Boy.jpg';
 import Kratos from '../../static/Kratos.jpg';
 import MotherTeresa from '../../static/Mother-Teresa.jpg';
@@ -13,20 +16,13 @@ import ShunningCamera from '../../static/Shunning-Camera.jpg';
 import SouthIndian from '../../static/South-Indian.jpg';
 import Witcher from '../../static/Witcher.jpg';
 import { StyledHeaderCenter } from '../../TextUtils';
+import './ImageGallery.css';
 
-const StyledGapperyImg = styled.img({
-  width: '200px',
-  height: '200px',
-  margin: '4px',
+const StyledGalleryImg = styled.img({
+  width: '100%',
   cursor: 'pointer',
   objectFit: 'cover',
-});
-
-const MoreIconIconContainer = styled(FlexRowCenter)({
-  flexDirection: 'column',
-  width: '208px',
-  height: '150px',
-  cursor: 'pointer',
+  height: '400px',
 });
 
 interface IProps {}
@@ -34,7 +30,6 @@ interface IProps {}
 interface IState {
   photoIndex: number;
   isOpen: boolean;
-  loadMore: boolean;
 }
 
 interface ISketch {
@@ -74,50 +69,36 @@ export class ImageGallery extends React.Component<IProps, IState> {
     this.state = {
       photoIndex: 0,
       isOpen: false,
-      loadMore: false,
     };
   }
 
   render() {
-    const { photoIndex, isOpen, loadMore } = this.state;
+    const { photoIndex, isOpen } = this.state;
 
     return (
       <PageSection>
         <SectionContent>
-          <StyledHeaderCenter>Sketches</StyledHeaderCenter>
-          <FlexRowCenter>
-            {this.sketches.map((sketch, index) => {
-              if (!loadMore && index > 2) {
-                return undefined;
+          <FlexColumnCenter>
+            <StyledHeaderCenter>Sketches</StyledHeaderCenter>
+            <Carousel
+              activeIndex={photoIndex}
+              onSelect={(selectedIndex: number) =>
+                this.setState({
+                  photoIndex: selectedIndex,
+                })
               }
-              return (
-                <StyledGapperyImg
-                  key={index}
-                  src={sketch.image}
-                  onClick={() =>
-                    this.setState({ isOpen: true, photoIndex: index })
-                  }
-                  alt={sketch.caption}
-                />
-              );
-            })}
-            {!loadMore && (
-              <MoreIconIconContainer
-                onClick={() =>
-                  this.setState({
-                    loadMore: true,
-                  })
-                }
-              >
-                <FontAwesomeIcon
-                  icon={faEllipsisH}
-                  size="4x"
-                  cursor="pointer"
-                  color="grey"
-                />
-              </MoreIconIconContainer>
-            )}
-          </FlexRowCenter>
+            >
+              {this.sketches.map((sketch, index) => (
+                <Carousel.Item key={index}>
+                  <StyledGalleryImg
+                    src={sketch.image}
+                    onClick={() => this.setState({ isOpen: true })}
+                    alt={sketch.caption}
+                  />
+                </Carousel.Item>
+              ))}
+            </Carousel>
+          </FlexColumnCenter>
           {isOpen && (
             <Lightbox
               mainSrc={this.sketches[photoIndex].image}

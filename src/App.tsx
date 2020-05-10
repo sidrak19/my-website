@@ -2,7 +2,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import * as React from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 import styled from 'styled-components';
-import { lightGreen } from './ColorUtils';
 import { normalFontSize } from './FontUtils';
 import { Footer } from './Footer/Footer';
 import { Header } from './Header/Header';
@@ -12,10 +11,8 @@ import { Projects } from './Projects';
 import { Resume } from './Resume/Resume';
 
 const StyledRoot = styled(FlexColumnCenter)({
-  backgroundColor: lightGreen,
   minHeight: '100vh',
   fontSize: normalFontSize,
-  fontFamily: `'Roboto Condensed', sans-serif;`,
   lineHeight: '1.5',
   overflow: 'hidden',
 });

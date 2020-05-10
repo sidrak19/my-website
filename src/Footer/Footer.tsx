@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { lightestSky } from '../ColorUtils';
+import { lightGreen } from '../ColorUtils';
 import { smallFontSize } from '../FontUtils';
 import { FlexRowCenter } from '../LayoutUtils';
 
@@ -10,8 +10,9 @@ const StyledFooter = styled.footer({
 
 const StyledFooterContent = styled(FlexRowCenter)({
   height: '64px',
-  backgroundColor: lightestSky,
+  backgroundColor: lightGreen,
   fontSize: smallFontSize,
+  color: 'white',
 });
 
 export const Footer: React.FC = () => {
