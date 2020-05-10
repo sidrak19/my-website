@@ -2,7 +2,6 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { StyledImg } from '../../ComponentUtils';
 import { FlexRowCenter, PageSection, SectionContent } from '../../LayoutUtils';
-// import profilepic from '../../static/profilepic.jpg';
 import southpark from '../../static/southpark.png';
 import { ExternalLink, StyledHeaderCenter } from '../../TextUtils';
 
@@ -12,9 +11,13 @@ const StyledArticle = styled.article({
   maxWidth: '530px',
 });
 
+const IntroContainer = styled(PageSection)({
+  marginBottom: 0,
+});
+
 export const Intro: React.FC = () => {
   return (
-    <PageSection>
+    <IntroContainer>
       <SectionContent>
         <FlexRowCenter>
           <StyledImg src={southpark} alt="profile pic" width="240px" />
@@ -33,6 +36,6 @@ export const Intro: React.FC = () => {
           </StyledArticle>
         </FlexRowCenter>
       </SectionContent>
-    </PageSection>
+    </IntroContainer>
   );
 };
