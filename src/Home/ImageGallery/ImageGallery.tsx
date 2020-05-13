@@ -3,11 +3,7 @@ import Carousel from 'react-bootstrap/Carousel';
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
 import styled from 'styled-components';
-import {
-  FlexColumnCenter,
-  PageSection,
-  SectionContent,
-} from '../../LayoutUtils';
+import { FlexColumnCenter, Section } from '../../LayoutUtils';
 import HimachalBoy from '../../static/Himachal-Boy.jpg';
 import Kratos from '../../static/Kratos.jpg';
 import MotherTeresa from '../../static/Mother-Teresa.jpg';
@@ -76,8 +72,7 @@ export class ImageGallery extends React.Component<IProps, IState> {
     const { photoIndex, isOpen } = this.state;
 
     return (
-      <PageSection>
-        <SectionContent>
+        <Section>
           <FlexColumnCenter>
             <StyledHeaderCenter>Sketches</StyledHeaderCenter>
             <Carousel
@@ -126,8 +121,7 @@ export class ImageGallery extends React.Component<IProps, IState> {
               imageCaption={this.sketches[photoIndex].caption}
             />
           )}
-        </SectionContent>
-      </PageSection>
+        </Section>
     );
   }
 }

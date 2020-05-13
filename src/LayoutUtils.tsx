@@ -1,34 +1,23 @@
 import styled from 'styled-components';
 
-export const Section = styled.section({
+export const Page = styled.div({
   maxWidth: '1000px',
   width: '100%',
-  borderRadius: '8px',
-  marginBottom: '32px',
-  '@media (max-width: 768px)': {
-    marginBottom: '16px',
-  },
   display: 'flex',
   flexDirection: 'column',
-});
-
-export const Page = styled(Section)({
   flex: '1 1 auto',
   marginBottom: '0',
-});
-
-export const PageSection = styled.div({
-  borderRadius: '8px',
-  margin: '0 32px 32px 32px',
+  backgroundColor: 'white',
+  padding: '32px',
   '@media (max-width: 768px)': {
-    margin: '0 16px 16px 16px',
+    padding: '16px',
   },
 });
 
-export const SectionContent = styled.div({
-  padding: '32px 48px',
+export const Section = styled.div({
+  margin: '32px',
   '@media (max-width: 768px)': {
-    padding: '16px 24px',
+    margin: '16px',
   },
 });
 

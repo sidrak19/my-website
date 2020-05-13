@@ -15,6 +15,7 @@ const StyledRoot = styled(FlexColumnCenter)({
   fontSize: normalFontSize,
   lineHeight: '1.5',
   overflow: 'hidden',
+  backgroundColor: 'aliceblue',
 });
 
 const App = () => {

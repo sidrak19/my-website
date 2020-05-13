@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PageSection, SectionContent } from '../../LayoutUtils';
+import { Section } from '../../LayoutUtils';
 import { Line, StyledH3 } from '../../TextUtils';
 import './Education.css';
 import { EducationEntry, IEducationEntry } from './EducationEntry';
@@ -39,26 +39,24 @@ const educations: Array<IEducationEntry> = [
 
 export const Education: React.FC = () => {
   return (
-    <PageSection>
-      <SectionContent>
-        <StyledH3>Education</StyledH3>
-        {educations.map(
-          (
-            { institute, description, subDescription, start, end, location },
-            index
-          ) => (
-            <EducationEntry
-              key={index}
-              institute={institute}
-              start={start}
-              end={end}
-              location={location}
-              description={description}
-              subDescription={subDescription}
-            />
-          )
-        )}
-      </SectionContent>
-    </PageSection>
+    <Section>
+      <StyledH3>Education</StyledH3>
+      {educations.map(
+        (
+          { institute, description, subDescription, start, end, location },
+          index
+        ) => (
+          <EducationEntry
+            key={index}
+            institute={institute}
+            start={start}
+            end={end}
+            location={location}
+            description={description}
+            subDescription={subDescription}
+          />
+        )
+      )}
+    </Section>
   );
 };

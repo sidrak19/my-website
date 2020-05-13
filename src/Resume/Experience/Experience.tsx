@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PageSection, SectionContent } from '../../LayoutUtils';
+import { Section } from '../../LayoutUtils';
 import { ExternalLink, Line, StyledH3 } from '../../TextUtils';
 import { ExperienceEntry, IExperienceEntry } from './ExperienceEntry';
 
@@ -89,22 +89,20 @@ const experiences: Array<IExperienceEntry> = [
 
 export const Experience: React.FC = () => {
   return (
-    <PageSection>
-      <SectionContent>
-        <StyledH3>
-          Professional Experience
-        </StyledH3>
-        {
-          experiences.map(({
-            position,
-            company,
-            location,
-            start,
-            end,
-            description,
-          }, index) => <ExperienceEntry key={index} position={position} company={company} location={location} start={start} end={end} description={description} />)
-        }
-      </SectionContent>
-    </PageSection>
+    <Section>
+      <StyledH3>
+        Professional Experience
+      </StyledH3>
+      {
+        experiences.map(({
+          position,
+          company,
+          location,
+          start,
+          end,
+          description,
+        }, index) => <ExperienceEntry key={index} position={position} company={company} location={location} start={start} end={end} description={description} />)
+      }
+    </Section>
   );
 };

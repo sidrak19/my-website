@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PageSection, SectionContent, SpacedItemDiv } from '../../LayoutUtils';
+import { Section, SpacedItemDiv } from '../../LayoutUtils';
 import { StyledHeaderCenter } from '../../TextUtils';
 
 export const FavoriteQuotes: React.FC = () => {
@@ -16,9 +16,8 @@ export const FavoriteQuotes: React.FC = () => {
     },
   ];
   return (
-    <PageSection>
-      <SectionContent>
-        <StyledHeaderCenter>Favorite Quotes</StyledHeaderCenter>
+    <Section>
+      <StyledHeaderCenter>Favorite Quotes</StyledHeaderCenter>
       {quotes.map((quote, index) => {
         return (
           <SpacedItemDiv key={index}>
@@ -27,7 +26,6 @@ export const FavoriteQuotes: React.FC = () => {
           </SpacedItemDiv>
         );
       })}
-      </SectionContent>
-    </PageSection>
+    </Section>
   );
 };

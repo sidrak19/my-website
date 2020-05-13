@@ -6,10 +6,6 @@ import { lightGreen } from '../ColorUtils';
 
 const StyledNavbar = styled(Navbar)({
   width: '100%',
-  marginBottom: '32px',
-  '@media (max-width: 768px)': {
-    marginBottom: '16px',
-  },
   backgroundColor: lightGreen,
 });
 
