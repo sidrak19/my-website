@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as React from 'react';
-import { HashRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import styled from 'styled-components';
 import { normalFontSize } from './FontUtils';
 import { Footer } from './Footer/Footer';
@@ -21,7 +21,7 @@ const StyledRoot = styled(FlexColumnCenter)({
 const App = () => {
   return (
     <StyledRoot>
-      <HashRouter>
+      <BrowserRouter>
         <Header />
         <Page>
           <Switch>
@@ -31,7 +31,7 @@ const App = () => {
           </Switch>
         </Page>
         <Footer />
-      </HashRouter>
+      </BrowserRouter>
     </StyledRoot>
   );
 };
