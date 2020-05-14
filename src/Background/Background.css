@@ -1,0 +1,21 @@
+.svg-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+}
+
+.back-line {
+  stroke-dasharray: calc(1.4142 * 100px);
+  stroke-dashoffset: calc(1.4142 * 100px);
+  animation: move 0.5s linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes move {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}

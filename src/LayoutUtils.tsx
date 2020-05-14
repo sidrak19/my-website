@@ -12,6 +12,7 @@ export const Page = styled.div({
   '@media (max-width: 768px)': {
     padding: '16px',
   },
+  zIndex: 1,
 });
 
 export const Section = styled.div({

@@ -6,6 +6,7 @@ import { FlexRowCenter } from '../LayoutUtils';
 
 const StyledFooter = styled.footer({
   width: '100%',
+  zIndex: 1,
 });
 
 const StyledFooterContent = styled(FlexRowCenter)({

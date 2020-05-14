@@ -7,6 +7,7 @@ import { lightGreen } from '../ColorUtils';
 const StyledNavbar = styled(Navbar)({
   width: '100%',
   backgroundColor: lightGreen,
+  zIndex: 1,
 });
 
 const StyledNavbarCollapse = styled(Navbar.Collapse)({
