@@ -7,7 +7,7 @@ export const Page = styled.div({
   flexDirection: 'column',
   flex: '1 1 auto',
   marginBottom: '0',
-  backgroundColor: 'rgba(255, 255, 255, 0.93)',
+  backgroundColor: 'rgba(255, 255, 255, 0.9)',
   padding: '32px',
   '@media (max-width: 768px)': {
     padding: '16px',
