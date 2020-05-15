@@ -15,7 +15,7 @@
   stroke-dasharray: calc(1.4142 * 100px);
   stroke-dashoffset: calc(1.4142 * 100px);
   animation-name: move;
-  animation-duration: 500ms;
+  animation-duration: 300ms;
   animation-timing-function: linear;
   animation-fill-mode: forwards;
 }
