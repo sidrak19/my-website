@@ -47,7 +47,7 @@ export class Background extends React.Component<{}, IState> {
   }
 
   render() {
-    return <svg className="svg-background">
+    return <svg height="100vh" width="100vw" className="svg-background">
       {this.state.els}
     </svg>;
   }
