@@ -1,16 +1,21 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as React from 'react';
 import styled from 'styled-components';
+import Tooltip from 'react-bootstrap/Tooltip';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import './ConnectItem.css';
 
 interface IConnectItem {
   icon: any;
   link: string;
   color: string;
+  name: string;
 }
 
 const StyledConnectItem = styled.a(
   {
-    margin: '16px 32px',
+    display: 'flex',
+    justifyContent: 'center',
     ':hover': {
       transform: 'translateY(-2px)',
     },
@@ -23,15 +28,23 @@ const StyledConnectItem = styled.a(
   })
 );
 
-export const ConnectItem: React.FC<IConnectItem> = ({ icon, link, color }) => {
+export const ConnectItem: React.FC<IConnectItem> = ({ icon, link, color, name }) => {
   return (
-    <StyledConnectItem
-      href={link}
-      target="_blank"
-      rel="noopener noreferrer"
-      color={color}
-    >
-      <FontAwesomeIcon icon={icon} size="3x" />
-    </StyledConnectItem>
+    <OverlayTrigger
+      key={link}
+      placement="bottom"
+      overlay={
+        <Tooltip id={name}>
+          {name}
+        </Tooltip>
+      }>
+      <StyledConnectItem
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+        color={color}>
+        <FontAwesomeIcon icon={icon} size="3x" />
+      </StyledConnectItem>
+    </OverlayTrigger>
   );
 };

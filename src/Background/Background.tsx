@@ -92,6 +92,7 @@ export class Background extends React.Component<{}, IState> {
             y2={`${neighbor.y}px`}
             stroke={clearWater}
             strokeWidth="5px"
+            strokeLinecap="round"
           />)));
           points.push(...neighbors);
         }
