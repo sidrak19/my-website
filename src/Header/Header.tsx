@@ -16,7 +16,10 @@ const StyledNavbarCollapse = styled(Navbar.Collapse)({
 
 const StyledNavbarToggle = styled(Navbar.Toggle)({
   marginLeft: '0',
-  backgroundColor: 'white',
+  backgroundColor: 'aliceblue',
+  ':focus': {
+    outline: 'none',
+  },
 });
 
 const StyledNavLink = styled(Nav.Link)({
