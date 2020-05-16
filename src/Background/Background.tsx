@@ -25,7 +25,7 @@ enum DirectionEnum {
 
 export class Background extends React.Component<{}, IState> {
   private static DIST = 50;
-  
+  private width: number = 0;
 
   constructor(props: {}) {
     super(props);
@@ -36,13 +36,17 @@ export class Background extends React.Component<{}, IState> {
   }
 
   componentDidMount() {
+    this._setWidth();
     this._drawBackground();
 
     window.addEventListener('resize', () => {
-      this.setState({
-        els: [],
-      });
-      this._drawBackground();
+      if (this.width > 768 || this.width !== window.innerWidth) {
+        this._setWidth();
+        this.setState({
+          els: [],
+        });
+        this._drawBackground();
+      }
     });
   }
 
@@ -50,6 +54,10 @@ export class Background extends React.Component<{}, IState> {
     return <svg height="100vh" width="100vw" className="svg-background">
       {this.state.els}
     </svg>;
+  }
+
+  private _setWidth(): void {
+    this.width = window.innerWidth;
   }
 
   private _drawBackground(): void {

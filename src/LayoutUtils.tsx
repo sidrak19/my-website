@@ -11,7 +11,7 @@ export const Page = styled.div({
   padding: '32px',
   '@media (max-width: 768px)': {
     padding: '16px',
-    backgroundColor: 'rgba(255, 255, 255)',
+    backgroundColor: 'rgba(255, 255, 255, 0.9)',
   },
   zIndex: 1,
 });

@@ -18,7 +18,7 @@ export const CodepenProject: React.FC<ICodepenProject> = ({
       {description && <Line>{description}</Line>}
       <iframe
         height="400px"
-        style={{ width: '100%' }}
+        style={{ width: '100%', background: 'white', }}
         scrolling="no"
         title={title}
         src={url}
