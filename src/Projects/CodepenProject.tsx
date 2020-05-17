@@ -1,11 +1,17 @@
 import * as React from 'react';
-import { StyledH4, Line } from '../TextUtils';
+import { StyledH4 } from '../TextUtils';
+import { Section } from '../LayoutUtils';
+import styled from 'styled-components';
 
 interface ICodepenProject {
   title: string;
   url: string;
-  description?: string;
+  description?: React.ReactNode;
 }
+
+const StyledDescription = styled.div({
+  marginBottom: '24px',
+});
 
 export const CodepenProject: React.FC<ICodepenProject> = ({
   title,
@@ -13,16 +19,16 @@ export const CodepenProject: React.FC<ICodepenProject> = ({
   description,
 }) => {
   return (
-    <>
+    <Section>
       <StyledH4>{title}</StyledH4>
-      {description && <Line>{description}</Line>}
+      {description && <StyledDescription>{description}</StyledDescription>}
       <iframe
         height="400px"
-        style={{ width: '100%', background: 'white', }}
+        style={{ width: '100%', background: 'white' }}
         scrolling="no"
         title={title}
-        src={url}
+        src={`${url}&height=400`}
       />
-    </>
+    </Section>
   );
 };
