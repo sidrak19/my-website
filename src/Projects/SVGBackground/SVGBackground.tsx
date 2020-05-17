@@ -14,7 +14,7 @@ export const SVGBackground: React.FC = () => {
             A unique background is generated on each render.
           </Line>
           <Line>
-            Click <code>Rerun</code> at the bottom right of the widget below to re-render the background.
+            Click <code>Render</code> at the bottom right to render the background again.
           </Line>
         </>
       }
