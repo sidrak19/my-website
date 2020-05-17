@@ -1,4 +1,6 @@
 import * as React from 'react';
+import * as H from 'history';
+import './Header.css';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import styled from 'styled-components';
@@ -30,12 +32,16 @@ const StyledNavLink = styled(Nav.Link)({
   },
 });
 
-export const Header: React.FC = () => {
+interface IHeader {
+  location: H.Location;
+}
+
+export const Header: React.FC<IHeader> = ({ location }) => {
   return (
     <StyledNavbar expand="lg">
       <StyledNavbarToggle aria-controls="basic-navbar-nav" />
       <StyledNavbarCollapse id="basic-navbar-nav">
-        <Nav>
+        <Nav activeKey={location.pathname}>
           <StyledNavLink href="/">Home</StyledNavLink>
           <StyledNavLink href="/projects">Projects</StyledNavLink>
           <StyledNavLink href="/resume">Resume</StyledNavLink>

@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, withRouter } from 'react-router-dom';
 import styled from 'styled-components';
 import './App.css';
 import { Background } from './Background/Background';
@@ -21,14 +21,16 @@ const StyledRoot = styled(FlexColumnCenter)({
 });
 
 const App = () => {
+  const HeaderWithRouter = withRouter(Header);
+
   return (
     <StyledRoot>
       <Background />
       <BrowserRouter>
-        <Header />
+        <HeaderWithRouter />
         <Page>
           <Switch>
-            <Route path="/" component={Home} exact />
+            <Route exact path="/" component={Home} />
             <Route path="/resume" component={Resume} />
             <Route path="/projects" component={Projects} />
           </Switch>
