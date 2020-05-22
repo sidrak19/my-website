@@ -20,33 +20,24 @@ const StyledRoot = styled(FlexColumnCenter)({
   backgroundColor: 'aliceblue',
 });
 
-const StyledPageHeader = styled.h1({
-  position: 'fixed',
-  fontSize: 'small',
-  top: '-100px',
-});
-
 const App = () => {
   const HeaderWithRouter = withRouter(Header);
 
   return (
-    <>
-      <StyledPageHeader>Siddharth Rakesh</StyledPageHeader>
-      <StyledRoot>
-        <Background />
-        <BrowserRouter>
-          <HeaderWithRouter />
-          <Page>
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route path="/resume" component={Resume} />
-              <Route path="/projects" component={Projects} />
-            </Switch>
-          </Page>
-          <Footer />
-        </BrowserRouter>
-      </StyledRoot>
-    </>
+    <StyledRoot>
+      <Background />
+      <BrowserRouter>
+        <HeaderWithRouter />
+        <Page>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/resume" component={Resume} />
+            <Route path="/projects" component={Projects} />
+          </Switch>
+        </Page>
+        <Footer />
+      </BrowserRouter>
+    </StyledRoot>
   );
 };
 
