@@ -15,7 +15,7 @@ export const Intro: React.FC = () => {
   return (
     <Section>
       <FlexRowCenter>
-        <StyledImg src={southpark} alt="profile pic" width="240px" />
+        <StyledImg src={southpark} alt="Siddharth Rakesh" width="240px" />
         <StyledArticle>
           <StyledHeaderCenter>Greetings, Traveller.</StyledHeaderCenter>
           <p>
