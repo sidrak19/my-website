@@ -23,6 +23,7 @@ const StyledRoot = styled(FlexColumnCenter)({
 const StyledPageHeader = styled.h1({
   position: 'fixed',
   fontSize: 'small',
+  top: '-100px',
 });
 
 const App = () => {
