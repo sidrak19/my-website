@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { StyledImg } from '../../ComponentUtils';
 import { FlexRowCenter, Section } from '../../LayoutUtils';
 import southpark from '../../static/southpark.png';
-import { ExternalLink, StyledHeaderCenter, Line } from '../../TextUtils';
+import { ExternalLink, StyledHeaderCenter } from '../../TextUtils';
 
 const StyledArticle = styled.article({
   textAlign: 'center',
