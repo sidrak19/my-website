@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { clearWater } from '../ColorUtils';
 import './Background.css';
+import { clearWater } from '../ColorUtils';
 
 interface IState {
   els: Array<React.ReactNode>;
@@ -91,23 +91,27 @@ export class Background extends React.Component<{}, IState> {
         visited.add(this._getPointKey(point));
         if (point && this._isPointValid(point)) {
           const neighbors = this._getRandomNeighbors(point).filter(neighbor => !visited.has(this._getPointKey(neighbor)));
-          lines.push(...(neighbors.map(neighbor => <line
-            key={`${this._getPointKey(point)}${this._getPointKey(neighbor)}`}
-            className="back-line"
-            x1={`${point.x}px`}
-            y1={`${point.y}px`}
-            x2={`${neighbor.x}px`}
-            y2={`${neighbor.y}px`}
-            stroke={clearWater}
-            strokeWidth="5px"
-            strokeLinecap="round"
-          />)));
+          lines.push(...(neighbors.map(neighbor => this._createLine(point, neighbor))));
           points.push(...neighbors);
         }
       }
 
       yield lines;
     }
+  }
+
+  private _createLine(from: IPoint, to: IPoint): React.ReactNode {
+    return <line
+      key={`s${this._getPointKey(from)}e${this._getPointKey(to)}`}
+      className="back-line"
+      x1={`${from.x}px`}
+      y1={`${from.y}px`}
+      x2={`${to.x}px`}
+      y2={`${to.y}px`}
+      stroke={clearWater}
+      strokeLinecap="round"
+      strokeWidth="5px"
+    />;
   }
 
   private _isPointValid(point: IPoint): boolean {

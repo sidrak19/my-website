@@ -4,5 +4,5 @@
 
 export const lightGreen: string = '#A8D5BA';
 export const lightestSky: string = '#E7EBE0';
-export const clearWater: string = '#ABD6DF';
+export const clearWater: string = '#c3e5ec';
 export const headings: string = '#6ba984';
