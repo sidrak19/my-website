@@ -33,17 +33,10 @@ export const ConnectItem: React.FC<IConnectItem> = ({ icon, link, color, name })
     <OverlayTrigger
       key={link}
       placement="bottom"
-      overlay={
-        <Tooltip id={name}>
-          {name}
-        </Tooltip>
-      }>
-      <StyledConnectItem
-        href={link}
-        target="_blank"
-        rel="noopener noreferrer"
-        color={color}>
-        <FontAwesomeIcon icon={icon} size="3x" />
+      overlay={<Tooltip id={name}>{name}</Tooltip>}
+    >
+      <StyledConnectItem href={link} target="_blank" rel="noopener noreferrer">
+        <FontAwesomeIcon icon={icon} size="3x" color={color} />
       </StyledConnectItem>
     </OverlayTrigger>
   );

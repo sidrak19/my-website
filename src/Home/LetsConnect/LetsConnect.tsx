@@ -1,10 +1,10 @@
 import { faGithub, faInstagram, faLinkedin, faTwitter, faCodepen } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import * as React from 'react';
 import { FlexColumnCenter, Section } from '../../LayoutUtils';
 import { StyledHeaderCenter } from '../../TextUtils';
 import { ConnectItem } from './ConnectItem';
 import styled from 'styled-components';
+import { MailItem } from './MailItem';
 
 const StyledGrid = styled.div({
   maxWidth: '600px',
@@ -22,12 +22,7 @@ export const LetsConnect: React.FC = () => {
       <FlexColumnCenter>
         <StyledHeaderCenter>Let's Connect</StyledHeaderCenter>
         <StyledGrid>
-          <ConnectItem
-            name="Mail"
-            icon={faEnvelope}
-            link="mailto:sid.rakesh@gmail.com"
-            color="red"
-          />
+          <MailItem />
           <ConnectItem
             name="LinkedIn"
             icon={faLinkedin}
