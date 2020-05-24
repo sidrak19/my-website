@@ -1,9 +1,8 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { StyledImg } from '../../ComponentUtils';
 import { FlexRowCenter, Section } from '../../LayoutUtils';
-import southpark from '../../static/southpark.png';
 import { ExternalLink, StyledHeaderCenter } from '../../TextUtils';
+import { Avatar } from './Avatar';
 
 const StyledArticle = styled.article({
   textAlign: 'center',
@@ -15,7 +14,7 @@ export const Intro: React.FC = () => {
   return (
     <Section>
       <FlexRowCenter>
-        <StyledImg src={southpark} alt="Siddharth Rakesh" width="240px" />
+        <Avatar />
         <StyledArticle>
           <StyledHeaderCenter>Greetings, Traveller.</StyledHeaderCenter>
           <p>
