@@ -5,15 +5,12 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import styled from 'styled-components';
 import { lightGreen } from '../ColorUtils';
+import { FlexExpand } from '../LayoutUtils';
 
 const StyledNavbar = styled(Navbar)({
   width: '100%',
   backgroundColor: lightGreen,
   zIndex: 1,
-});
-
-const StyledNavbarCollapse = styled(Navbar.Collapse)({
-  justifyContent: 'flex-end',
 });
 
 const StyledNavbarToggle = styled(Navbar.Toggle)({
@@ -32,6 +29,23 @@ const StyledNavLink = styled(Nav.Link)({
   },
 });
 
+const StyledBrand = styled(Navbar.Brand)({
+  color: 'white !important',
+  fontWeight: 'bold',
+  '::after': {
+    content: '"<Siddharth />"',
+  },
+  '@media (max-width: 768px)': {
+    '::after': {
+      content: '"<Sid />"',
+    },
+  },
+});
+
+const StyledNavbarCollapse = styled(Navbar.Collapse)({
+  flexGrow: 0,
+});
+
 interface IHeader {
   location: H.Location;
 }
@@ -39,6 +53,8 @@ interface IHeader {
 export const Header: React.FC<IHeader> = ({ location }) => {
   return (
     <StyledNavbar expand="lg">
+      <StyledBrand href="/" />
+      <FlexExpand />
       <StyledNavbarToggle aria-controls="basic-navbar-nav" />
       <StyledNavbarCollapse id="basic-navbar-nav">
         <Nav activeKey={location.pathname}>

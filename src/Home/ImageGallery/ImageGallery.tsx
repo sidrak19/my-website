@@ -11,7 +11,7 @@ import ShaoJun from '../../static/Shao-Jun.jpg';
 import ShunningCamera from '../../static/Shunning-Camera.jpg';
 import SouthIndian from '../../static/South-Indian.jpg';
 import Witcher from '../../static/Witcher.jpg';
-import { StyledHeaderCenter } from '../../TextUtils';
+import { StyledH2Center } from '../../TextUtils';
 import './ImageGallery.css';
 
 const StyledGalleryImg = styled.img({
@@ -74,7 +74,7 @@ export class ImageGallery extends React.Component<IProps, IState> {
     return (
         <Section>
           <FlexColumnCenter>
-            <StyledHeaderCenter>Sketches</StyledHeaderCenter>
+            <StyledH2Center>Sketches</StyledH2Center>
             <Carousel
               activeIndex={photoIndex}
               onSelect={(selectedIndex: number) =>

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { StyledH4 } from '../TextUtils';
+import { StyledH2 } from '../TextUtils';
 import { Section } from '../LayoutUtils';
 import styled from 'styled-components';
 
@@ -20,7 +20,7 @@ export const CodepenProject: React.FC<ICodepenProject> = ({
 }) => {
   return (
     <Section>
-      <StyledH4>{title}</StyledH4>
+      <StyledH2>{title}</StyledH2>
       {description && <StyledDescription>{description}</StyledDescription>}
       <iframe
         height="400px"

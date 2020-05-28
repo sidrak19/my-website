@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { FlexRowCenter, Section } from '../../LayoutUtils';
-import { ExternalLink, StyledHeaderCenter } from '../../TextUtils';
+import { ExternalLink, StyledH1 } from '../../TextUtils';
 import { Avatar } from './Avatar';
 
 const StyledArticle = styled.article({
@@ -16,16 +16,17 @@ export const Intro: React.FC = () => {
       <FlexRowCenter>
         <Avatar />
         <StyledArticle>
-          <StyledHeaderCenter>Greetings, Traveller.</StyledHeaderCenter>
+          <p>Greetings, Traveller. I'm</p>
+          <StyledH1>Siddharth Rakesh.</StyledH1>
           <p>
-            I'm Siddharth Rakesh, an experienced web developer and UX
+            I'm an experienced web developer and UX
             design enthusiast, currently working at{' '}
             <ExternalLink
               text="Rubrik, Inc"
               link="https://www.rubrik.com/en"
-            />.
+            /> in Bengaluru, India. I'm also a fan of sketching and gaming.
           </p>
-          <p>I'm also a fan of sketching and gaming.</p>
+          <p>You can find my resume <a href="/resume">here</a>.</p>
         </StyledArticle>
       </FlexRowCenter>
     </Section>

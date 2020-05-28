@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Section } from '../../LayoutUtils';
-import { Line, StyledH3 } from '../../TextUtils';
+import { Line, StyledH2 } from '../../TextUtils';
 import './Education.css';
 import { EducationEntry, IEducationEntry } from './EducationEntry';
 
@@ -40,7 +40,7 @@ const educations: Array<IEducationEntry> = [
 export const Education: React.FC = () => {
   return (
     <Section>
-      <StyledH3>Education</StyledH3>
+      <StyledH2>Education</StyledH2>
       {educations.map(
         (
           { institute, description, subDescription, start, end, location },

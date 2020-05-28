@@ -1,12 +1,14 @@
 import * as React from 'react';
 import { Section } from '../../LayoutUtils';
-import { StyledHeaderCenter, Line } from '../../TextUtils';
+import { StyledH2Center, CenterLine } from '../../TextUtils';
 
 export const HomeProjects: React.FC = () => {
   return (
     <Section>
-      <StyledHeaderCenter>Projects</StyledHeaderCenter>
-      <Line>Check out some of my recent front-end projects <a href="/projects">here</a>.</Line>
+      <StyledH2Center>Projects</StyledH2Center>
+      <CenterLine>
+        Check out some of my recent front-end projects <a href="/projects">here</a>.
+      </CenterLine>
     </Section>
   );
 };

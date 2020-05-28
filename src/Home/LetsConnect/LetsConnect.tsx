@@ -1,7 +1,7 @@
 import { faGithub, faInstagram, faLinkedin, faTwitter, faCodepen } from '@fortawesome/free-brands-svg-icons';
 import * as React from 'react';
 import { FlexColumnCenter, Section } from '../../LayoutUtils';
-import { StyledHeaderCenter } from '../../TextUtils';
+import { StyledH2Center } from '../../TextUtils';
 import { ConnectItem } from './ConnectItem';
 import styled from 'styled-components';
 import { MailItem } from './MailItem';
@@ -20,7 +20,7 @@ export const LetsConnect: React.FC = () => {
   return (
     <Section>
       <FlexColumnCenter>
-        <StyledHeaderCenter>Let's Connect</StyledHeaderCenter>
+        <StyledH2Center>Let's Connect</StyledH2Center>
         <StyledGrid>
           <MailItem />
           <ConnectItem

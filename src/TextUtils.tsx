@@ -2,22 +2,22 @@ import * as React from 'react';
 import styled from "styled-components";
 import { headings } from './ColorUtils';
 
+export const StyledH1 = styled.h1({
+  margin: '16px 0 32px 0',
+  color: headings,
+});
+
 export const StyledH2 = styled.h2({
   margin: '16px 0 32px 0',
   color: headings,
 });
 
 export const StyledH3 = styled.h3({
-  margin: '16px 0 32px 0',
-  color: headings,
-});
-
-export const StyledH4 = styled.h4({
   margin: '16px 0 16px 0',
   color: headings,
 });
 
-export const StyledHeaderCenter = styled(StyledH2)({
+export const StyledH2Center = styled(StyledH2)({
   textAlign: 'center',
   color: headings,
 });
@@ -30,7 +30,11 @@ export const Line = styled.p({
   color,
 }));
 
-export const NoMarginLine = styled.p({
+export const CenterLine = styled(Line)({
+  textAlign: 'center',
+});
+
+export const NoMarginLine = styled(Line)({
   margin: '0',
 });
 

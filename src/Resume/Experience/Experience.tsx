@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Section } from '../../LayoutUtils';
-import { ExternalLink, Line, StyledH3 } from '../../TextUtils';
+import { ExternalLink, Line, StyledH2 } from '../../TextUtils';
 import { ExperienceEntry, IExperienceEntry } from './ExperienceEntry';
 
 const experiences: Array<IExperienceEntry> = [
@@ -90,9 +90,9 @@ const experiences: Array<IExperienceEntry> = [
 export const Experience: React.FC = () => {
   return (
     <Section>
-      <StyledH3>
+      <StyledH2>
         Professional Experience
-      </StyledH3>
+      </StyledH2>
       {
         experiences.map(({
           position,
