@@ -46,7 +46,16 @@ export class Avatar extends React.Component<{}, IState> {
 
   render() {
     return (
-      <StyledSvg width={this.imgWidth} height={this.imgHeight}>
+      <StyledSvg
+        width={this.imgWidth}
+        height={this.imgHeight}
+        aria-labelledby="avatarTitle avatarDesc"
+        role="img"
+      >
+        <title id="avatarTitle">Siddharth Rakesh</title>
+        <desc id="avatarDesc">
+          Siddharth Rakesh's Avatar, whose eyes follow the mouse cursor or finger touch.
+        </desc>
         <image
           href={southpark}
           width={this.imgWidth}
