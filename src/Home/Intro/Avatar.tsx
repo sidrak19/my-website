@@ -6,7 +6,11 @@ const StyledSvg = styled.svg({
   margin: '0 16px',
 });
 
-export class Avatar extends React.Component<{}, {}> {
+interface IState {
+  loaded: boolean;
+}
+
+export class Avatar extends React.Component<{}, IState> {
   private imgWidth: number = 240;
   private imgHeight: number = 317.13;
   private R: number = 15;
@@ -26,47 +30,102 @@ export class Avatar extends React.Component<{}, {}> {
   private rightCenterX!: number;
   private rightCenterY!: number;
 
-  componentDidMount() {
-    this._setWidth();
-    this._setEyeElements();
+  constructor(props: {}) {
+    super(props);
 
-    document.addEventListener('mousemove', (e: MouseEvent) => {
-      this._positionEyes(e.pageX, e.pageY);
-    }, false);
+    this.state = {
+      loaded: false,
+    };
+  }
 
-    document.addEventListener('touchmove', (e) => {
-      if (e.touches?.[0]) {
-        this._positionEyes(e.touches[0].clientX, e.touches[0].clientY);
-      }
-    }, false);
-
-    window.addEventListener('resize', () => {
-      if (this.width > 768 || this.width !== window.innerWidth) {
-        this._setWidth();
-        this._setEyeElements();
-      }
-    });
+  componentDidUpdate(): void {
+    if (this.state.loaded) {
+      this._initEyes();
+    }
   }
 
   render() {
     return (
       <StyledSvg width={this.imgWidth} height={this.imgHeight}>
-        <image href={southpark} width={this.imgWidth} />
-        <g className="eyes">
-          <g className="left-eye">
-            <circle cx={this.leftCx} cy={this.cy} r={this.R} fill="transparent" className="left-eyeball" />
-            <circle cx={this.leftCx} cy={this.cy} r={this.r} fill="black" className="left-pupil" />
+        <image
+          href={southpark}
+          width={this.imgWidth}
+          onLoad={() => {
+            this.setState({
+              loaded: true,
+            });
+          }}
+        />
+        {this.state.loaded && (
+          <g className="eyes">
+            <g className="left-eye">
+              <circle
+                cx={this.leftCx}
+                cy={this.cy}
+                r={this.R}
+                fill="transparent"
+                className="left-eyeball"
+              />
+              <circle
+                cx={this.leftCx}
+                cy={this.cy}
+                r={this.r}
+                fill="black"
+                className="left-pupil"
+              />
+            </g>
+            <g className="right-eye">
+              <circle
+                cx={this.rightCx}
+                cy={this.cy}
+                r={this.R}
+                fill="transparent"
+                className="right-eyeball"
+              />
+              <circle
+                cx={this.rightCx}
+                cy={this.cy}
+                r={this.r}
+                fill="black"
+                className="right-pupil"
+              />
+            </g>
           </g>
-          <g className="right-eye">
-            <circle cx={this.rightCx} cy={this.cy} r={this.R} fill="transparent" className="right-eyeball" />
-            <circle cx={this.rightCx} cy={this.cy} r={this.r} fill="black" className="right-pupil" />
-          </g>
-        </g>
+        )}
       </StyledSvg>
     );
   }
 
+  private _initEyes(): void {
+    this._setEyeElements();
+
+    document.addEventListener(
+      'mousemove',
+      (e: MouseEvent) => {
+        this._positionEyes(e.pageX, e.pageY);
+      },
+      false
+    );
+
+    document.addEventListener(
+      'touchmove',
+      (e) => {
+        if (e.touches?.[0]) {
+          this._positionEyes(e.touches[0].clientX, e.touches[0].clientY);
+        }
+      },
+      false
+    );
+
+    window.addEventListener('resize', () => {
+      if (this.width > 768 || this.width !== window.innerWidth) {
+        this._setEyeElements();
+      }
+    });
+  }
+
   private _setEyeElements(): void {
+    this._setWidth();
     this.eyesArea = document.querySelector(".eyes")!.getBoundingClientRect();
 
     this.leftPupil = document.querySelector(".left-pupil")! as HTMLElement;
