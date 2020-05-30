@@ -3,7 +3,7 @@ import Carousel from 'react-bootstrap/Carousel';
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
 import styled from 'styled-components';
-import { FlexColumnCenter, Section } from '../../LayoutUtils';
+import { FlexColumnAlignCenter, Section } from '../../LayoutUtils';
 import HimachalBoy from '../../static/Himachal-Boy.jpg';
 import Kratos from '../../static/Kratos.jpg';
 import MotherTeresa from '../../static/Mother-Teresa.jpg';
@@ -72,56 +72,56 @@ export class ImageGallery extends React.Component<IProps, IState> {
     const { photoIndex, isOpen } = this.state;
 
     return (
-        <Section>
-          <FlexColumnCenter>
-            <StyledH2Center>Sketches</StyledH2Center>
-            <Carousel
-              activeIndex={photoIndex}
-              onSelect={(selectedIndex: number) =>
-                this.setState({
-                  photoIndex: selectedIndex,
-                })
-              }
-            >
-              {this.sketches.map((sketch, index) => (
-                <Carousel.Item key={index}>
-                  <StyledGalleryImg
-                    src={sketch.image}
-                    onClick={() => this.setState({ isOpen: true })}
-                    alt={sketch.caption}
-                  />
-                </Carousel.Item>
-              ))}
-            </Carousel>
-          </FlexColumnCenter>
-          {isOpen && (
-            <Lightbox
-              mainSrc={this.sketches[photoIndex].image}
-              nextSrc={
-                this.sketches[(photoIndex + 1) % this.sketches.length].image
-              }
-              prevSrc={
-                this.sketches[
-                  (photoIndex + this.sketches.length - 1) % this.sketches.length
-                ].image
-              }
-              onCloseRequest={() => this.setState({ isOpen: false })}
-              onMovePrevRequest={() =>
-                this.setState({
-                  photoIndex:
-                    (photoIndex + this.sketches.length - 1) %
-                    this.sketches.length,
-                })
-              }
-              onMoveNextRequest={() =>
-                this.setState({
-                  photoIndex: (photoIndex + 1) % this.sketches.length,
-                })
-              }
-              imageCaption={this.sketches[photoIndex].caption}
-            />
-          )}
-        </Section>
+      <Section>
+        <FlexColumnAlignCenter>
+          <StyledH2Center>Sketches</StyledH2Center>
+          <Carousel
+            activeIndex={photoIndex}
+            onSelect={(selectedIndex: number) =>
+              this.setState({
+                photoIndex: selectedIndex,
+              })
+            }
+          >
+            {this.sketches.map((sketch, index) => (
+              <Carousel.Item key={index}>
+                <StyledGalleryImg
+                  src={sketch.image}
+                  onClick={() => this.setState({ isOpen: true })}
+                  alt={sketch.caption}
+                />
+              </Carousel.Item>
+            ))}
+          </Carousel>
+        </FlexColumnAlignCenter>
+        {isOpen && (
+          <Lightbox
+            mainSrc={this.sketches[photoIndex].image}
+            nextSrc={
+              this.sketches[(photoIndex + 1) % this.sketches.length].image
+            }
+            prevSrc={
+              this.sketches[
+                (photoIndex + this.sketches.length - 1) % this.sketches.length
+              ].image
+            }
+            onCloseRequest={() => this.setState({ isOpen: false })}
+            onMovePrevRequest={() =>
+              this.setState({
+                photoIndex:
+                  (photoIndex + this.sketches.length - 1) %
+                  this.sketches.length,
+              })
+            }
+            onMoveNextRequest={() =>
+              this.setState({
+                photoIndex: (photoIndex + 1) % this.sketches.length,
+              })
+            }
+            imageCaption={this.sketches[photoIndex].caption}
+          />
+        )}
+      </Section>
     );
   }
 }

@@ -26,6 +26,7 @@ enum DirectionEnum {
 export class Background extends React.Component<{}, IState> {
   private static DIST = 50;
   private width: number = 0;
+  private backgroundInterval: number = 0;
 
   constructor(props: {}) {
     super(props);
@@ -36,18 +37,21 @@ export class Background extends React.Component<{}, IState> {
   }
 
   componentDidMount() {
-    this._setWidth();
     this._drawBackground();
 
-    window.addEventListener('resize', () => {
+    const debounce = (func: Function) => {
+      let timer: number;
+      return function (event: Event) {
+        if (timer) clearTimeout(timer);
+        timer = setTimeout(func, 100, event);
+      };
+    }
+
+    window.addEventListener('resize', debounce(() => {
       if (this.width > 768 || this.width !== window.innerWidth) {
-        this._setWidth();
-        this.setState({
-          els: [],
-        });
         this._drawBackground();
       }
-    });
+    }));
   }
 
   render() {
@@ -61,12 +65,18 @@ export class Background extends React.Component<{}, IState> {
   }
 
   private _drawBackground(): void {
+    clearInterval(this.backgroundInterval);
+    this._setWidth();
+    this.setState({
+      els: [],
+    });
+
     const linesGenerator = this._getNewLines();
   
-    const interval = setInterval(() => {
+    this.backgroundInterval = setInterval(() => {
       const nextLines = linesGenerator.next().value;
       if (!nextLines) {
-        clearInterval(interval);
+        clearInterval(this.backgroundInterval);
         return;
       }
       this.setState({

@@ -1,6 +1,12 @@
-import { faGithub, faInstagram, faLinkedin, faTwitter, faCodepen } from '@fortawesome/free-brands-svg-icons';
+import {
+  faGithub,
+  faInstagram,
+  faLinkedin,
+  faTwitter,
+  faCodepen,
+} from '@fortawesome/free-brands-svg-icons';
 import * as React from 'react';
-import { FlexColumnCenter, Section } from '../../LayoutUtils';
+import { FlexColumnAlignCenter, Section } from '../../LayoutUtils';
 import { StyledH2Center } from '../../TextUtils';
 import { ConnectItem } from './ConnectItem';
 import styled from 'styled-components';
@@ -19,7 +25,7 @@ const StyledGrid = styled.div({
 export const LetsConnect: React.FC = () => {
   return (
     <Section>
-      <FlexColumnCenter>
+      <FlexColumnAlignCenter>
         <StyledH2Center>Let's Connect</StyledH2Center>
         <StyledGrid>
           <MailItem />
@@ -54,7 +60,7 @@ export const LetsConnect: React.FC = () => {
             color="#00acee"
           />
         </StyledGrid>
-      </FlexColumnCenter>
+      </FlexColumnAlignCenter>
     </Section>
   );
 };

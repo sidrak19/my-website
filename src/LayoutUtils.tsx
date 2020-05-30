@@ -37,10 +37,17 @@ export const FlexRowCenter = styled(FlexRowAlignCenter)({
   justifyContent: 'center',
 });
 
-export const FlexColumnCenter = styled.div({
+export const FlexColumn = styled.div({
   display: 'flex',
   flexDirection: 'column',
+});
+
+export const FlexColumnAlignCenter = styled(FlexColumn)({
   alignItems: 'center',
+});
+
+export const FlexColumnCenter = styled(FlexColumnAlignCenter)({
+  justifyContent: 'center',
 });
 
 export const FlexExpand = styled.div({

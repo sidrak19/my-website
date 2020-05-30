@@ -7,7 +7,8 @@ export const HomeProjects: React.FC = () => {
     <Section>
       <StyledH2Center>Projects</StyledH2Center>
       <CenterLine>
-        Check out some of my recent front-end projects <a href="/projects">here</a>.
+        Check out some of my recent front-end projects{' '}
+        <a href="/projects">here</a>.
       </CenterLine>
     </Section>
   );

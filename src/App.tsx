@@ -8,11 +8,11 @@ import { normalFontSize } from './FontUtils';
 import { Footer } from './Footer/Footer';
 import { Header } from './Header/Header';
 import { Home } from './Home/Home';
-import { FlexColumnCenter, Page } from './LayoutUtils';
+import { FlexColumnAlignCenter, Page } from './LayoutUtils';
 import { Projects } from './Projects/Projects';
 import { Resume } from './Resume/Resume';
 
-const StyledRoot = styled(FlexColumnCenter)({
+const StyledRoot = styled(FlexColumnAlignCenter)({
   minHeight: '100vh',
   fontSize: normalFontSize,
   lineHeight: '1.5',
