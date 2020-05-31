@@ -18,13 +18,13 @@ export const Intro: React.FC = () => {
   return (
     <Section>
       <IntroGrid>
+        <NameSection>
+          <Line>Greetings, Traveller. Welcome to</Line>
+          <StyledH1>Siddharth Rakesh's personal website</StyledH1>
+        </NameSection>
         <FlexColumnCenter>
           <Avatar />
         </FlexColumnCenter>
-        <NameSection>
-          <Line>Greetings, Traveller. I'm</Line>
-          <StyledH1>Siddharth Rakesh</StyledH1>
-        </NameSection>
       </IntroGrid>
     </Section>
   );
