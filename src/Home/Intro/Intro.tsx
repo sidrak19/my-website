@@ -7,7 +7,6 @@ import { Avatar } from './Avatar';
 const IntroGrid = styled.div({
   display: 'grid',
   gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-  gridRowGap: '32px',
 });
 
 const NameSection = styled(FlexColumnCenter)({
@@ -19,8 +18,8 @@ export const Intro: React.FC = () => {
     <Section>
       <IntroGrid>
         <NameSection>
-          <Line>Greetings, Traveller. Welcome to</Line>
-          <StyledH1>Siddharth Rakesh's personal website</StyledH1>
+          <Line>Greetings, Traveller. I'm</Line>
+          <StyledH1>Siddharth Rakesh</StyledH1>
         </NameSection>
         <FlexColumnCenter>
           <Avatar />
