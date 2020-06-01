@@ -8,10 +8,10 @@ export const Page = styled.div({
   flex: '1 1 auto',
   marginBottom: '0',
   backgroundColor: 'rgba(255, 255, 255, 0.85)',
+  backdropFilter: 'blur(2px)',
   padding: '32px',
   '@media (max-width: 768px)': {
     padding: '16px',
-    backgroundColor: 'rgba(255, 255, 255, 0.9)',
   },
   zIndex: 1,
 });
