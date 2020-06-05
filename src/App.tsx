@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as React from 'react';
-import { BrowserRouter, Route, Switch, withRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, withRouter, Redirect } from 'react-router-dom';
 import styled from 'styled-components';
 import './App.css';
 import { Background } from './Background/Background';
@@ -33,6 +33,7 @@ const App = () => {
             <Route exact path="/" component={Home} />
             <Route path="/resume" component={Resume} />
             <Route path="/projects" component={Projects} />
+            <Redirect to="/" />
           </Switch>
         </Page>
         <Footer />
