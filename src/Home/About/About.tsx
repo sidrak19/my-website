@@ -33,7 +33,7 @@ export const About: React.FC = () => {
           in 2016.
         </AboutMeLine>
         <AboutMeLine>
-          You can find my resume <a href="/resume">here</a>.
+          To know more about me, check out my <a href="/resume">web resume</a>.
         </AboutMeLine>
       </FlexColumnCenter>
     </Section>
