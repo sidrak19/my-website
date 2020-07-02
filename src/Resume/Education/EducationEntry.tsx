@@ -4,12 +4,12 @@ import { BoldLine, Line } from '../../TextUtils';
 import { TimeLocation } from '../ResumeUtils';
 
 export interface IEducationEntry {
-  institute: string | JSX.Element;
+  institute: React.ReactNode;
   start: string;
   end?: string;
   location: string;
-  description: string | JSX.Element;
-  subDescription?: string | JSX.Element;
+  description: React.ReactNode;
+  subDescription?: React.ReactNode;
 }
 
 export const EducationEntry: React.FC<IEducationEntry> = ({

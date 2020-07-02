@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { SpacedItemDiv, StyledUl } from '../../LayoutUtils';
-import { BoldLine, Line } from '../../TextUtils';
+import { BoldLine, Line, ItalicLine } from '../../TextUtils';
 import { TimeLocation } from '../ResumeUtils';
 
 export interface IExperienceEntry {
@@ -9,7 +9,7 @@ export interface IExperienceEntry {
   location: string;
   start: string;
   end: string;
-  description: Array<string | JSX.Element>;
+  description: Array<React.ReactNode>;
 }
 
 export const ExperienceEntry: React.FC<IExperienceEntry> = ({
@@ -23,8 +23,11 @@ export const ExperienceEntry: React.FC<IExperienceEntry> = ({
   return (
     <SpacedItemDiv>
       <BoldLine>
-        {position}, {company}
+        {company}
       </BoldLine>
+      <ItalicLine>
+        {position}
+      </ItalicLine>
       <TimeLocation start={start} end={end} location={location} />
       <StyledUl>
         {description.map((descLine, index) => (

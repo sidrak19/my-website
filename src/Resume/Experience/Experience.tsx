@@ -5,7 +5,7 @@ import { ExperienceEntry, IExperienceEntry } from './ExperienceEntry';
 
 const experiences: Array<IExperienceEntry> = [
   {
-    position: 'Member of Techincal Staff',
+    position: 'Member of Technical Staff',
     company: 'Rubrik, Inc.',
     location: 'Bengaluru, India',
     start: 'May, 2019',

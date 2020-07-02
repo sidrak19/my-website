@@ -42,6 +42,10 @@ export const BoldLine = styled(Line)({
   fontWeight: 'bold',
 });
 
+export const ItalicLine = styled(Line)({
+  fontStyle: 'italic',
+});
+
 export const ExternalLink: React.FC<{
   text?: string;
   link: string;

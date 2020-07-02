@@ -10,7 +10,7 @@ import { FlexExpand } from '../LayoutUtils';
 const StyledNavbar = styled(Navbar)({
   width: '100%',
   backgroundColor: lightGreen,
-  zIndex: 1,
+  zIndex: 100,
 });
 
 const StyledNavbarToggle = styled(Navbar.Toggle)({
