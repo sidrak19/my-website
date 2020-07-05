@@ -5,20 +5,24 @@ import { ExperienceEntry, IExperienceEntry } from './ExperienceEntry';
 
 const experiences: Array<IExperienceEntry> = [
   {
-    position: 'Member of Technical Staff',
+    position: 'Front-End Engineer (Member of Technical Staff)',
     company: 'Rubrik, Inc.',
     location: 'Bengaluru, India',
     start: 'May, 2019',
     end: 'Present',
     description: [
       <Line>
-        Working on the client web interface for Rubrik's <ExternalLink text="data management platforms" link="https://www.rubrik.com/en/products" /> in
-        the data center and the cloud. They allow our users to efficiently manage and schedule
-        backups through a user friendly policy-based solution, while also allowing them to archive and
-        migrate data to the cloud securely, and recover data on-demand.
+        Developing the cloud (React) and on-premise (Angular) client portals for
+        Rubrik’s{' '}
+        <ExternalLink
+          text="data management platforms"
+          link="https://www.rubrik.com/en/products"
+        />
+        , to provide clients a user-friendly and easy to navigate web interface
+        for managing their backups, and recover data on-demand.
       </Line>,
       `Developing common, re-usable components in React and Angular to promote rapid development and consistent
-      web design across the websites in Rubrik's platforms.`
+      web design across the websites in Rubrik's platforms.`,
     ],
   },
   {
@@ -29,15 +33,17 @@ const experiences: Array<IExperienceEntry> = [
     end: 'April, 2019',
     description: [
       <Line>
-        Worked on the client website for Goldman Sachs{' '}
+        Worked on the client portal for HNI clients of the{' '}
         <ExternalLink
           text="Private Wealth Management"
           link="https://www.goldmansachs.com/what-we-do/consumer-and-investment-management/private-wealth-management/"
-        />{' '}
-        division, which manages the portfolio of ultra-high net worth
-        individuals.
+        />
+        , used for managing their portfolios and investments.
       </Line>,
-      `Developed the web interface and back-end systems for an automated incident resolution product, which reduced the incident count by 330,000 incidents (out of over a million incidents) per month, saving over 50 months of human effort per month.`,
+      `Developed the website (AngularJS) and back-end (DropWizard) for an incident resolution workflow creator,
+      which allows users to create workflows using a set of re-usable actions, for automatically resolving reported
+      incidents. Workflows created with this tool reduced the incidents count by 330,000 (out of over a million
+      incidents) per month, saving over 50 months of human effort per month.`,
       <Line>
         Developed an application management user interface for{' '}
         <ExternalLink text="AppDynamics" link="https://www.appdynamics.com/" />,
@@ -60,17 +66,17 @@ const experiences: Array<IExperienceEntry> = [
     end: 'July, 2015',
     description: [
       <Line>
-        Developed a{' '}
+        Developed a developer-focused{' '}
         <ExternalLink
-          text="web-based performance database tool"
+          text="performance analysis tool"
           link="https://github.com/sidrakesh93/grpc-tools/tree/master/benchmarking/performance_db"
-        />
-        , for collecting and storing various test metrics from the users of
-        Google Remote Procedure Calls (
+        />{' '}
+        for Google Remote Procedure Calls (
         <ExternalLink text="gRPC" link="https://grpc.io/" />
-        ).
+        ), which collected and stored various test metrics such as percentile
+        latencies, QPS rate, etc. from developer tests, and provided a web based
+        comparative view of these results.
       </Line>,
-      `Tested and provided feedback on the new Devanagari keyboard being developed at the time.`,
     ],
   },
   {
@@ -80,8 +86,8 @@ const experiences: Array<IExperienceEntry> = [
     start: 'May, 2014',
     end: 'July, 2014',
     description: [
-      `Implemented a feature in an internal warehouse management tool for viewing the locked storage bins at
-      any given time. This substantially reduced the manual effort for getting this information.`,
+      `Implemented a feature in Amazon’s warehouse management tool for viewing the storage bins locked by warehouse
+      administrators at any given time. This substantially reduced the manual effort for getting this information.`,
       `Migrated an existing Oracle SQL database to an internal NoSQL database for improved performance.`,
     ],
   },
