@@ -1,5 +1,5 @@
 import * as React from 'react';
-import southpark from '../../static/southpark.png';
+import southpark from '../../static/southpark.webp';
 import styled from 'styled-components';
 
 const StyledSvg = styled.svg({
