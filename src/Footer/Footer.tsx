@@ -13,14 +13,22 @@ const StyledFooterContent = styled(FlexRowCenter)({
   height: '64px',
   backgroundColor: lightGreen,
   fontSize: smallFontSize,
-  color: 'white',
+  color: 'black',
+});
+
+const StyledLink = styled.a({
+  color: 'black',
 });
 
 export const Footer: React.FC = () => {
   return (
     <StyledFooter>
       <StyledFooterContent>
-        © 2020&nbsp;<a href="http://www.sidrakesh.com">Siddharth Rakesh</a>. All rights reserved.
+        © 2020&nbsp;
+        <StyledLink href="http://www.sidrakesh.com">
+          Siddharth Rakesh
+        </StyledLink>
+        . All rights reserved.
       </StyledFooterContent>
     </StyledFooter>
   );

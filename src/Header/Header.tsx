@@ -30,16 +30,7 @@ const StyledNavLink = styled(Nav.Link)({
 });
 
 const StyledBrand = styled(Navbar.Brand)({
-  color: 'white !important',
   fontWeight: 'bold',
-  '::after': {
-    content: '"<Siddharth />"',
-  },
-  '@media (max-width: 768px)': {
-    '::after': {
-      content: '"<Sid />"',
-    },
-  },
 });
 
 const StyledNavbarCollapse = styled(Navbar.Collapse)({
@@ -53,7 +44,7 @@ interface IHeader {
 export const Header: React.FC<IHeader> = ({ location }) => {
   return (
     <StyledNavbar expand="lg">
-      <StyledBrand href="/" />
+      <StyledBrand href="/">{'<Siddharth />'}</StyledBrand>
       <FlexExpand />
       <StyledNavbarToggle aria-controls="basic-navbar-nav" />
       <StyledNavbarCollapse id="basic-navbar-nav">
