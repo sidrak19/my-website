@@ -46,20 +46,24 @@ export const ItalicLine = styled(Line)({
   fontStyle: 'italic',
 });
 
+const StyledLink = styled.a({
+  color: '#0e62bd',
+});
+
 export const ExternalLink: React.FC<{
   text?: string;
   link: string;
-}> = ({
-  text,
-  link,
-}) => {
+}> = ({text, link}) => {
   return (
-    <a
-      href={link}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+    <StyledLink href={link} target="_blank" rel="noopener noreferrer">
       {text ? text : link}
-    </a>
+    </StyledLink>
   );
+};
+
+export const InternalLink: React.FC<{
+  text?: string;
+  link: string;
+}> = ({ text, link }) => {
+  return <StyledLink href={link}>{text ? text : link}</StyledLink>;
 };

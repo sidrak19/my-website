@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { Section, FlexColumnCenter } from '../../LayoutUtils';
-import { ExternalLink, StyledH2Center } from '../../TextUtils';
+import { ExternalLink, StyledH2Center, InternalLink } from '../../TextUtils';
 
 const AboutMeLine = styled.p({
   textAlign: 'center',
@@ -33,7 +33,7 @@ export const About: React.FC = () => {
           in 2016.
         </AboutMeLine>
         <AboutMeLine>
-          To know more about me, check out my <a href="/resume">web resume</a>.
+          To know more about me, check out my <InternalLink link="/resume" text="web resume" />.
         </AboutMeLine>
       </FlexColumnCenter>
     </Section>

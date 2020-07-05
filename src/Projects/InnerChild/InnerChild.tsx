@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { CodepenProject } from '../CodepenProject';
-import { Line } from '../../TextUtils';
+import { Line, ExternalLink } from '../../TextUtils';
 
 export const InnerChild: React.FC = () => {
   return (
@@ -11,9 +11,8 @@ export const InnerChild: React.FC = () => {
         <>
           <Line>
             Inspired from the sculpture at the{' '}
-            <a href="shorturl.at/cuCK9" target="_blank" rel="noopener noreferrer">
-              Burning man festival in Nevada
-            </a>, which demonstrates a conflict between a man and a woman as well as
+            <ExternalLink link="shorturl.at/cuCK9" text="Burning man festival in Nevada" />
+            , which demonstrates a conflict between a man and a woman as well as
             the outer and inner expression of human nature. This interactive SVG uses{' '}
             <code>clip-path</code> for showing selective pieces of an SVG on mouse
             interaction.
