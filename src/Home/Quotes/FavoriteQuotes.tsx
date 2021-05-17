@@ -21,6 +21,11 @@ const quotes: Array<IQuote> = [
     attr: 'Gandalf the Grey',
     url: 'https://lotr.fandom.com/wiki/Gandalf',
   },
+  {
+    quote: `It is possible to commit no mistakes and still lose. That is not a weakness; that is life.`,
+    attr: 'Captain Jean-Luc Picard',
+    url: 'https://memory-alpha.fandom.com/wiki/Jean-Luc_Picard'
+  },
 ];
 
 export const FavoriteQuotes: React.FC = () => {
