@@ -24,7 +24,7 @@ export const Footer: React.FC = () => {
   return (
     <StyledFooter>
       <StyledFooterContent>
-        © 2020&nbsp;
+        © 2021&nbsp;
         <StyledLink href="http://www.sidrakesh.com">
           Siddharth Rakesh
         </StyledLink>
