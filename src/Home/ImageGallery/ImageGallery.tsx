@@ -11,6 +11,7 @@ import ShaoJun from '../../static/Shao-Jun.webp';
 import ShunningCamera from '../../static/Shunning-Camera.webp';
 import SouthIndian from '../../static/South-Indian.webp';
 import Witcher from '../../static/Witcher.webp';
+import Aloy from '../../static/Aloy.webp';
 import { StyledH2Center } from '../../TextUtils';
 import './ImageGallery.css';
 
@@ -36,6 +37,7 @@ interface ISketch {
 export class ImageGallery extends React.Component<IProps, IState> {
   private sketches: Array<ISketch> = [
     { image: Kratos, caption: 'Kratos: God of War' },
+    { image: Aloy, caption: 'Aloy: Horizon Zero Dawn' },
     { image: ShaoJun, caption: "Shao Jun - Assassin's Creed China" },
     {
       image: Witcher,
