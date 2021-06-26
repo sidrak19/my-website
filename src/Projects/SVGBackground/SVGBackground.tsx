@@ -18,7 +18,7 @@ export const SVGBackground: React.FC = () => {
           </Line>
         </>
       }
-      url="https://codepen.io/sidrakesh/embed/VwvEpae?theme-id=light&default-tab=result"
+      url={`https://codepen.io/sidrakesh/embed/VwvEpae?default-tab=result`}
     />
   );
 };

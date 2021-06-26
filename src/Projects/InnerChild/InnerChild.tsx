@@ -6,7 +6,7 @@ export const InnerChild: React.FC = () => {
   return (
     <CodepenProject
       title={'The inner child'}
-      url="https://codepen.io/sidrakesh/embed/BaoqxWw?theme-id=dark&default-tab=result"
+      url={`https://codepen.io/sidrakesh/embed/BaoqxWw?default-tab=result`}
       description={
         <>
           <Line>

@@ -2,6 +2,7 @@ import * as React from 'react';
 import { StyledH2 } from '../TextUtils';
 import { Section } from '../LayoutUtils';
 import styled from 'styled-components';
+import { useTheme } from '../Themes/ThemeProviderWrapper';
 
 interface ICodepenProject {
   title: string;
@@ -18,6 +19,8 @@ export const CodepenProject: React.FC<ICodepenProject> = ({
   url,
   description,
 }) => {
+  const {theme} = useTheme();
+
   return (
     <Section>
       <StyledH2>{title}</StyledH2>
@@ -27,7 +30,7 @@ export const CodepenProject: React.FC<ICodepenProject> = ({
         style={{ width: '100%', background: 'white' }}
         scrolling="no"
         title={title}
-        src={`${url}&height=400`}
+        src={`${url}&theme-id=${theme.toLowerCase()}&height=400`}
       />
     </Section>
   );
