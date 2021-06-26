@@ -9,6 +9,7 @@ export const ThemeSwitcher: React.FC = () => {
   return (
     <label
       className="theme-selector-label"
+      title={`${theme === ThemesEnum.LIGHT ? 'Activate dark theme' : 'Activate light theme'}`}
       aria-label={`${theme === ThemesEnum.LIGHT ? 'Activate dark theme' : 'Activate light theme'}`}>
       <input
         type="checkbox"
