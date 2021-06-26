@@ -1,20 +1,20 @@
 import styled from 'styled-components';
 
-export const Page = styled.div({
+export const Page = styled.div(({theme}) => ({
   maxWidth: '1000px',
   width: '100%',
   display: 'flex',
   flexDirection: 'column',
   flex: '1 1 auto',
   marginBottom: '0',
-  backgroundColor: 'rgba(255, 255, 255, 0.85)',
+  backgroundColor: theme.pageBackground,
   backdropFilter: 'blur(2px)',
   padding: '32px',
   '@media (max-width: 768px)': {
     padding: '16px',
   },
   zIndex: 1,
-});
+}));
 
 export const Section = styled.div({
   margin: '32px',

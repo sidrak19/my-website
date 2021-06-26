@@ -1,26 +1,25 @@
 import * as React from 'react';
 import styled from "styled-components";
-import { headings } from './ColorUtils';
 
-export const StyledH1 = styled.h1({
+export const StyledH1 = styled.h1(({theme}) => ({
   margin: '16px 0 32px 0',
-  color: headings,
-});
+  color: theme.headingTextColor,
+}));
 
-export const StyledH2 = styled.h2({
+export const StyledH2 = styled.h2(({theme}) => ({
   margin: '16px 0 32px 0',
-  color: headings,
-});
+  color: theme.headingTextColor,
+}));
 
-export const StyledH3 = styled.h3({
+export const StyledH3 = styled.h3(({theme}) => ({
   margin: '16px 0 16px 0',
-  color: headings,
-});
+  color: theme.headingTextColor,
+}));
 
-export const StyledH2Center = styled(StyledH2)({
+export const StyledH2Center = styled(StyledH2)(({theme}) => ({
   textAlign: 'center',
-  color: headings,
-});
+  color: theme.headingTextColor,
+}));
 
 export const Line = styled.p({
   marginBottom: '10px',
@@ -46,9 +45,9 @@ export const ItalicLine = styled(Line)({
   fontStyle: 'italic',
 });
 
-const StyledLink = styled.a({
-  color: '#0e62bd',
-});
+const StyledLink = styled.a(({theme}) => ({
+  color: theme.linkColor,
+}));
 
 export const ExternalLink: React.FC<{
   text?: string;

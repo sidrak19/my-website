@@ -4,14 +4,14 @@ import './Header.css';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import styled from 'styled-components';
-import { lightGreen } from '../ColorUtils';
 import { FlexExpand } from '../LayoutUtils';
+import { ThemeSwitcher } from '../Themes/ThemeSwitcher';
 
-const StyledNavbar = styled(Navbar)({
+const StyledNavbar = styled(Navbar)(({theme}) => ({
   width: '100%',
-  backgroundColor: lightGreen,
+  backgroundColor: theme.headerBackground,
   zIndex: 100,
-});
+}));
 
 const StyledNavbarToggle = styled(Navbar.Toggle)({
   marginLeft: '0',
@@ -29,9 +29,10 @@ const StyledNavLink = styled(Nav.Link)({
   },
 });
 
-const StyledBrand = styled(Navbar.Brand)({
+const StyledBrand = styled(Navbar.Brand)(({theme}) => ({
   fontWeight: 'bold',
-});
+  color: `${theme.brandColor} !important`,
+}));
 
 const StyledNavbarCollapse = styled(Navbar.Collapse)({
   flexGrow: 0,
@@ -46,6 +47,7 @@ export const Header: React.FC<IHeader> = ({ location }) => {
     <StyledNavbar expand="lg">
       <StyledBrand href="/">{'<Siddharth />'}</StyledBrand>
       <FlexExpand />
+      <ThemeSwitcher />
       <StyledNavbarToggle aria-controls="basic-navbar-nav" />
       <StyledNavbarCollapse id="basic-navbar-nav">
         <Nav activeKey={location.pathname}>

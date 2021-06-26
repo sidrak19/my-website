@@ -4,12 +4,12 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { Line } from '../TextUtils';
 
-const TimeLocationGrid = styled.div({
+const TimeLocationGrid = styled.div(({theme}) => ({
   display: 'grid',
   gridColumnGap: '32px',
   gridTemplateColumns: 'repeat(auto-fill, 250px)',
-  color: '#5788b9',
-});
+  color: theme.resumeTimeLocation,
+}));
 
 interface ITimeLocation {
   location: string;

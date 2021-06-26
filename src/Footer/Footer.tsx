@@ -1,6 +1,5 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { lightGreen } from '../ColorUtils';
 import { smallFontSize } from '../FontUtils';
 import { FlexRowCenter } from '../LayoutUtils';
 
@@ -9,16 +8,16 @@ const StyledFooter = styled.footer({
   zIndex: 1,
 });
 
-const StyledFooterContent = styled(FlexRowCenter)({
+const StyledFooterContent = styled(FlexRowCenter)(({theme}) => ({
   height: '64px',
-  backgroundColor: lightGreen,
+  backgroundColor: theme.footerBackground,
   fontSize: smallFontSize,
-  color: 'black',
-});
+  color: theme.footerText,
+}));
 
-const StyledLink = styled.a({
-  color: 'black',
-});
+const StyledLink = styled.a(({theme}) => ({
+  color: theme.footerText,
+}));
 
 export const Footer: React.FC = () => {
   return (

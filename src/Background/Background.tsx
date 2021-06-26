@@ -1,6 +1,6 @@
 import * as React from 'react';
 import './Background.css';
-import { clearWater } from '../ColorUtils';
+import styled from 'styled-components';
 
 interface IState {
   els: Array<React.ReactNode>;
@@ -22,6 +22,12 @@ enum DirectionEnum {
   RIGHT = 6,
   LEFT = 7,
 }
+
+const StyledLine = styled.line(({theme}) => ({
+  stroke: theme.backgroundLineColor,
+  strokeLinecap: 'round',
+  strokeWidth: '5px',
+}));
 
 export class Background extends React.Component<{}, IState> {
   private static DIST = 50;
@@ -111,16 +117,13 @@ export class Background extends React.Component<{}, IState> {
   }
 
   private _createLine(from: IPoint, to: IPoint): React.ReactNode {
-    return <line
+    return <StyledLine
       key={`s${this._getPointKey(from)}e${this._getPointKey(to)}`}
       className="back-line"
       x1={`${from.x}px`}
       y1={`${from.y}px`}
       x2={`${to.x}px`}
       y2={`${to.y}px`}
-      stroke={clearWater}
-      strokeLinecap="round"
-      strokeWidth="5px"
     />;
   }
 

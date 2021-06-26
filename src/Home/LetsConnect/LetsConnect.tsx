@@ -11,6 +11,8 @@ import { StyledH2Center } from '../../TextUtils';
 import { ConnectItem } from './ConnectItem';
 import styled from 'styled-components';
 import { MailItem } from './MailItem';
+import { useTheme } from '../../Themes/ThemeProviderWrapper';
+import { ThemesEnum } from '../../Themes/Theme.types';
 
 const StyledGrid = styled.div({
   maxWidth: '600px',
@@ -23,6 +25,8 @@ const StyledGrid = styled.div({
 });
 
 export const LetsConnect: React.FC = () => {
+  const {theme} = useTheme();
+
   return (
     <Section>
       <FlexColumnAlignCenter>
@@ -39,13 +43,13 @@ export const LetsConnect: React.FC = () => {
             name="Github"
             icon={faGithub}
             link="https://github.com/sidrak19"
-            color="black"
+            color={theme === ThemesEnum.LIGHT ? 'black' : 'white'}
           />
           <ConnectItem
             name="Codepen"
             icon={faCodepen}
             link="https://codepen.io/sidrakesh"
-            color="black"
+            color={theme === ThemesEnum.LIGHT ? 'black' : 'white'}
           />
           <ConnectItem
             name="Instagram"
