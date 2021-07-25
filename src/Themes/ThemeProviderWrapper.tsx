@@ -14,10 +14,22 @@ const themeOptions: Record<ThemesEnum, ThemeType> = {
   [ThemesEnum.DARK]: DarkTheme,
 };
 
-const storedTheme = localStorage.getItem('APP_THEME');
+const APP_THEME_KEY = 'APP_THEME';
+
+const getLocalStorageTheme = () => {
+  const storedTheme = localStorage.getItem(APP_THEME_KEY);
+  return storedTheme === 'DARK' ? ThemesEnum.DARK : ThemesEnum.LIGHT;
+};
 
 export const ThemeProviderWrapper: React.FC = ({children}) => {
-  const [theme, setTheme] = React.useState<ThemesEnum>(storedTheme === 'DARK' ? ThemesEnum.DARK : ThemesEnum.LIGHT);
+  const [theme, setTheme] = React.useState<ThemesEnum>(getLocalStorageTheme());
+
+  window.addEventListener('storage', (event) => {
+    if (event.storageArea !== localStorage) return;
+    if (event.key === APP_THEME_KEY) {
+      setTheme(getLocalStorageTheme);
+    }
+  });
 
   return (
     <ThemeContext.Provider value={{theme, setTheme}}>
@@ -37,7 +49,7 @@ export const useTheme = (): {
   }
 
   const storeInLocalStorageToo = (currTheme: ThemesEnum) => {
-    localStorage.setItem('APP_THEME', currTheme);
+    localStorage.setItem(APP_THEME_KEY, currTheme);
     setTheme(currTheme);
   };
 
