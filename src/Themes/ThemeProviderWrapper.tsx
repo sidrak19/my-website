@@ -17,8 +17,10 @@ const themeOptions: Record<ThemesEnum, ThemeType> = {
 const APP_THEME_KEY = 'APP_THEME';
 
 const getLocalStorageTheme = () => {
+  const prefDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
   const storedTheme = localStorage.getItem(APP_THEME_KEY);
-  return storedTheme === 'DARK' ? ThemesEnum.DARK : ThemesEnum.LIGHT;
+
+  return storedTheme === 'DARK' || prefDark ? ThemesEnum.DARK : ThemesEnum.LIGHT;
 };
 
 export const ThemeProviderWrapper: React.FC = ({children}) => {
