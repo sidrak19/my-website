@@ -39,7 +39,7 @@ const BackgroundContainer = styled.div({
 export class Background extends React.Component<{}, IState> {
   private static DIST = 50;
   private width: number = 0;
-  private backgroundInterval: number = 0;
+  private backgroundInterval: any;
 
   constructor(props: {}) {
     super(props);

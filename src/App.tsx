@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as React from 'react';
-import { BrowserRouter, Route, Switch, withRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import styled, { createGlobalStyle } from 'styled-components';
 import './App.css';
 import { Background } from './Background/Background';
@@ -45,22 +45,20 @@ const StyledRoot = styled(FlexColumnAlignCenter)(({theme}) => ({
 }));
 
 const App = () => {
-  const HeaderWithRouter = withRouter(Header);
-
   return (
     <ThemeProviderWrapper>
       <GlobalStyle />
       <StyledRoot>
         <Background />
         <BrowserRouter>
-          <HeaderWithRouter />
+          <Header />
           <Page>
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route path="/resume" component={Resume} />
-              <Route path="/projects" component={Projects} />
-              <Route component={Error404} status={404} />
-            </Switch>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="resume" element={<Resume />} />
+              <Route path="projects" element={<Projects />} />
+              <Route path="*" element={<Error404 />} />
+            </Routes>
           </Page>
           <Footer />
         </BrowserRouter>

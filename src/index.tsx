@@ -6,7 +6,6 @@ import * as ReactDOM from 'react-dom';
 import App from './App';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-// import { render } from 'react-snapshot';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

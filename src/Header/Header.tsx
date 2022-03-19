@@ -1,11 +1,11 @@
 import * as React from 'react';
-import * as H from 'history';
 import './Header.css';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import styled from 'styled-components';
 import { FlexExpand } from '../LayoutUtils';
 import { ThemeSwitcher } from '../Themes/ThemeSwitcher';
+import { useLocation } from 'react-router-dom';
 
 const StyledNavbar = styled(Navbar)(({theme}) => ({
   width: '100%',
@@ -32,17 +32,16 @@ const StyledNavLink = styled(Nav.Link)({
 const StyledBrand = styled(Navbar.Brand)(({theme}) => ({
   fontWeight: 'bold',
   color: `${theme.brandColor} !important`,
+  marginLeft: '32px',
 }));
 
 const StyledNavbarCollapse = styled(Navbar.Collapse)({
   flexGrow: 0,
 });
 
-interface IHeader {
-  location: H.Location;
-}
+export const Header: React.FC = () => {
+  const {pathname} = useLocation();
 
-export const Header: React.FC<IHeader> = ({ location }) => {
   return (
     <StyledNavbar expand="lg">
       <StyledBrand href="/">{'<Siddharth />'}</StyledBrand>
@@ -50,7 +49,7 @@ export const Header: React.FC<IHeader> = ({ location }) => {
       <ThemeSwitcher />
       <StyledNavbarToggle aria-controls="basic-navbar-nav" />
       <StyledNavbarCollapse id="basic-navbar-nav">
-        <Nav activeKey={location.pathname}>
+        <Nav activeKey={pathname}>
           <StyledNavLink href="/">Home</StyledNavLink>
           <StyledNavLink href="/projects">Projects</StyledNavLink>
           <StyledNavLink href="/resume">Resume</StyledNavLink>
