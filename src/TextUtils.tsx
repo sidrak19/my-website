@@ -11,15 +11,18 @@ export const StyledH2 = styled.h2(({theme}) => ({
   color: theme.headingTextColor,
 }));
 
+export const StyledH2Center = styled(StyledH2)({
+  textAlign: 'center',
+});
+
 export const StyledH3 = styled.h3(({theme}) => ({
   margin: '16px 0 16px 0',
   color: theme.headingTextColor,
 }));
 
-export const StyledH2Center = styled(StyledH2)(({theme}) => ({
+export const StyledH3Center = styled(StyledH3)({
   textAlign: 'center',
-  color: theme.headingTextColor,
-}));
+});
 
 export const Line = styled.p({
   marginBottom: '10px',

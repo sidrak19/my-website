@@ -6,6 +6,7 @@ import { LetsConnect } from './LetsConnect/LetsConnect';
 import { FavoriteQuotes } from './Quotes/FavoriteQuotes';
 import { HomeProjects } from './Projects/HomeProjects';
 import { About } from './About/About';
+import { ImageProcessing } from './ImageProcessing/ImageProcessing';
 
 export const Home: React.FC = () => {
   return (
@@ -14,6 +15,7 @@ export const Home: React.FC = () => {
       <About />
       <HomeProjects />
       <ImageGallery />
+      <ImageProcessing />
       <FavoriteQuotes />
       <LetsConnect />
     </>

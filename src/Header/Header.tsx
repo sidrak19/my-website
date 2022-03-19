@@ -10,7 +10,7 @@ import { ThemeSwitcher } from '../Themes/ThemeSwitcher';
 const StyledNavbar = styled(Navbar)(({theme}) => ({
   width: '100%',
   backgroundColor: theme.headerBackground,
-  zIndex: 100,
+  zIndex: 100001,
 }));
 
 const StyledNavbarToggle = styled(Navbar.Toggle)({
