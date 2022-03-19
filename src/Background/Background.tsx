@@ -61,7 +61,7 @@ export class Background extends React.Component<{}, IState> {
     }
 
     window.addEventListener('resize', debounce(() => {
-      if (this.width > 768 || this.width !== document.body.offsetWidth) {
+      if (this.width > 768 || this.width !== window.innerWidth) {
         this._drawBackground();
       }
     }));
@@ -78,7 +78,7 @@ export class Background extends React.Component<{}, IState> {
   }
 
   private _setWidth(): void {
-    this.width = document.body.offsetWidth;
+    this.width = window.innerWidth;
   }
 
   private _drawBackground(): void {
@@ -139,8 +139,8 @@ export class Background extends React.Component<{}, IState> {
   }
 
   private _isPointValid(point: IPoint): boolean {
-    const { offsetHeight, offsetWidth } = document.body;
-    return !(point.x < 0 || point.y < 0 || point.x > offsetWidth || point.y > offsetHeight);
+    const { innerHeight , innerWidth } = window;
+    return !(point.x < 0 || point.y < 0 || point.x > innerWidth || point.y > innerHeight);
   }
 
   private _getPointKey(point?: IPoint): string {
@@ -229,12 +229,12 @@ export class Background extends React.Component<{}, IState> {
   }
 
   private _getSeedPoints(): Array<IPoint> {
-    const { offsetHeight, offsetWidth } = document.body;
+    const { innerHeight , innerWidth } = window;
 
     const startingPoints: Array<IPoint> = [];
 
-    for (let x = 100; x < offsetWidth; x += 500) {
-      for (let y = 100; y < offsetHeight; y += 500) {
+    for (let x = 100; x < innerWidth; x += 500) {
+      for (let y = 100; y < innerHeight; y += 500) {
         startingPoints.push({
           x,
           y,
