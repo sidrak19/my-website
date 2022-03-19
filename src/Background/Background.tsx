@@ -29,6 +29,13 @@ const StyledLine = styled.line(({theme}) => ({
   strokeWidth: '5px',
 }));
 
+const BackgroundContainer = styled.div({
+  position: 'fixed',
+  zIndex: 0,
+  height: '100vh',
+  width: '100vw',
+});
+
 export class Background extends React.Component<{}, IState> {
   private static DIST = 50;
   private width: number = 0;
@@ -54,20 +61,24 @@ export class Background extends React.Component<{}, IState> {
     }
 
     window.addEventListener('resize', debounce(() => {
-      if (this.width > 768 || this.width !== window.innerWidth) {
+      if (this.width > 768 || this.width !== document.body.offsetWidth) {
         this._drawBackground();
       }
     }));
   }
 
   render() {
-    return <svg height="100vh" width="100vw" className="svg-background">
-      {this.state.els}
-    </svg>;
+    return (
+      <BackgroundContainer>
+        <svg height="100%" width="100%" className="svg-background">
+          {this.state.els}
+        </svg>
+      </BackgroundContainer>
+    );
   }
 
   private _setWidth(): void {
-    this.width = window.innerWidth;
+    this.width = document.body.offsetWidth;
   }
 
   private _drawBackground(): void {
@@ -128,8 +139,8 @@ export class Background extends React.Component<{}, IState> {
   }
 
   private _isPointValid(point: IPoint): boolean {
-    const { innerHeight, innerWidth } = window;
-    return !(point.x < 0 || point.y < 0 || point.x > innerWidth || point.y > innerHeight);
+    const { offsetHeight, offsetWidth } = document.body;
+    return !(point.x < 0 || point.y < 0 || point.x > offsetWidth || point.y > offsetHeight);
   }
 
   private _getPointKey(point?: IPoint): string {
@@ -218,12 +229,12 @@ export class Background extends React.Component<{}, IState> {
   }
 
   private _getSeedPoints(): Array<IPoint> {
-    const { innerHeight, innerWidth } = window;
+    const { offsetHeight, offsetWidth } = document.body;
 
     const startingPoints: Array<IPoint> = [];
 
-    for (let x = 100; x < innerWidth; x += 500) {
-      for (let y = 100; y < innerHeight; y += 500) {
+    for (let x = 100; x < offsetWidth; x += 500) {
+      for (let y = 100; y < offsetHeight; y += 500) {
         startingPoints.push({
           x,
           y,
