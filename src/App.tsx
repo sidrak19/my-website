@@ -11,6 +11,8 @@ import { FlexColumnAlignCenter, Page } from './LayoutUtils';
 import { Error404 } from './404/404';
 import { ThemeProviderWrapper } from './Themes/ThemeProviderWrapper';
 import { Home } from './Home/Home';
+import { Resume } from './Resume/Resume';
+import { Projects } from './Projects/Projects';
 
 const GlobalStyle = createGlobalStyle(({theme}: {theme: any}) => ({
   // scrollbar width is supported by Firefox
@@ -33,9 +35,6 @@ const GlobalStyle = createGlobalStyle(({theme}: {theme: any}) => ({
   },
 }));
 
-const Resume = React.lazy(() => import('./Resume/Resume'));
-const Projects = React.lazy(() => import('./Projects/Projects'));
-
 const StyledRoot = styled(FlexColumnAlignCenter)(({theme}) => ({
   minHeight: '100vh',
   fontSize: normalFontSize,
@@ -56,14 +55,12 @@ const App = () => {
         <BrowserRouter>
           <HeaderWithRouter />
           <Page>
-            <React.Suspense fallback={<div>Loading...</div>}>
-              <Switch>
-                <Route exact path="/" component={Home} />
-                <Route path="/resume" component={Resume} />
-                <Route path="/projects" component={Projects} />
-                <Route component={Error404} status={404} />
-              </Switch>
-            </React.Suspense>
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/resume" component={Resume} />
+              <Route path="/projects" component={Projects} />
+              <Route component={Error404} status={404} />
+            </Switch>
           </Page>
           <Footer />
         </BrowserRouter>

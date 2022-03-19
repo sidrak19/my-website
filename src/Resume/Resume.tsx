@@ -5,7 +5,7 @@ import './Resume.css';
 import { Skills } from './Skills/Skills';
 import { DownloadResume } from './DownloadResume/DownloadResume';
 
-const Resume: React.FC = () => {
+export const Resume: React.FC = () => {
   return (
     <>
       <Education/>
@@ -15,5 +15,3 @@ const Resume: React.FC = () => {
     </>
   );
 };
-
-export default Resume;
