@@ -1,4 +1,5 @@
 import * as React from 'react';
+import LazyLoad from 'react-lazyload';
 import Carousel from 'react-bootstrap/Carousel';
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
@@ -40,11 +41,13 @@ export const ImageCarousel: React.FC<{
         >
           {images.map((image, index) => (
             <Carousel.Item key={index}>
-              <StyledGalleryImg
-                src={image.image}
-                onClick={() => setIsOpen(true)}
-                alt={image.caption}
-              />
+              <LazyLoad height={400} once>
+                <StyledGalleryImg
+                  src={image.image}
+                  onClick={() => setIsOpen(true)}
+                  alt={image.caption}
+                />
+              </LazyLoad>
             </Carousel.Item>
           ))}
         </Carousel>
