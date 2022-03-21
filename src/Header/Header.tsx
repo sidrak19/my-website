@@ -21,17 +21,17 @@ const StyledNavbarToggle = styled(Navbar.Toggle)({
   },
 });
 
-const StyledNavLink = styled(Nav.Link)({
-  color: 'white !important',
+const StyledNavLink = styled(Nav.Link)(({theme}) => ({
+  color: `${theme.headerTextColor} !important`,
   margin: '0 32px 0 16px',
   '@media (max-width: 768px)': {
     margin: '0',
   },
-});
+}));
 
 const StyledBrand = styled(Navbar.Brand)(({theme}) => ({
   fontWeight: 'bold',
-  color: `${theme.brandColor} !important`,
+  color: `${theme.headerTextColor} !important`,
   marginLeft: '32px',
 }));
 

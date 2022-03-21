@@ -10,7 +10,7 @@ export const DarkTheme: ThemeType = {
   footerText: 'black',
   scrollerColor: '#D9514E',
   scrollerBackgroundColor: '#2A2B2D',
-  brandColor: 'white',
+  headerTextColor: 'white',
   backgroundLineColor: '#2DA8D8',
   linkColor: '#007bff',
   resumeTimeLocation: '#D9514E',

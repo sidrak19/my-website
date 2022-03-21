@@ -10,7 +10,7 @@ export const LightTheme: ThemeType = {
   footerText: 'black',
   scrollerColor: '#94dbb0',
   scrollerBackgroundColor: 'rgb(211, 234, 255)',
-  brandColor: 'black',
+  headerTextColor: 'black',
   backgroundLineColor: '#c3e5ec',
   linkColor: '#0e62bd',
   resumeTimeLocation: '#ed3d39',
